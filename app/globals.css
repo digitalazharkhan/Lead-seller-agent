@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --background: 220 24% 97%;
+    --foreground: 224 34% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 34% 10%;
+    --primary: 252 84% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 224 25% 20%;
+    --muted: 220 20% 93%;
+    --muted-foreground: 220 10% 47%;
+    --accent: 220 19% 93%;
+    --border: 220 18% 88%;
+    --ring: 252 84% 66%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: 225 30% 7%;
+    --foreground: 220 22% 94%;
+    --card: 225 27% 10%;
+    --card-foreground: 220 22% 94%;
+    --primary: 252 88% 72%;
+    --primary-foreground: 230 30% 10%;
+    --secondary: 222 22% 15%;
+    --secondary-foreground: 220 22% 91%;
+    --muted: 222 22% 14%;
+    --muted-foreground: 220 12% 61%;
+    --accent: 222 22% 16%;
+    --border: 220 20% 17%;
+    --ring: 252 88% 72%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: hsl(var(--background));
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+    background-image: radial-gradient(ellipse at 66% -20%, rgb(124 91 235 / 11%), transparent 42rem);
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgb(167 139 250 / 30%);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: color-mix(in srgb, hsl(var(--card)) 86%, transparent);
+    backdrop-filter: blur(18px);
+  }
+
+  .chart-grid line {
+    stroke: hsl(var(--border));
+    stroke-opacity: 0.72;
+  }
+
+  .dropdown-item {
+    @apply flex cursor-pointer select-none items-center gap-2 rounded-lg px-2 py-2 text-xs outline-none transition-colors;
+  }
+
+  .dropdown-item:focus,
+  .dropdown-item[data-highlighted] {
+    @apply bg-accent text-foreground;
+  }
+
+  .dropdown-item[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .status-new,
+  .status-opted-out {
+    @apply bg-rose-400/[0.08] text-rose-300;
+  }
+
+  .status-new {
+    @apply bg-violet-400/[0.08] text-violet-300;
+  }
+
+  .status-contacted {
+    @apply bg-amber-400/[0.08] text-amber-300;
+  }
+
+  .status-replied {
+    @apply bg-emerald-400/[0.08] text-emerald-300;
+  }
+
+  .status-client {
+    @apply bg-blue-400/[0.08] text-blue-300;
+  }
+
+  .transaction-completed {
+    @apply bg-emerald-400/[0.08] text-emerald-300;
+  }
+
+  .transaction-pending {
+    @apply bg-amber-400/[0.08] text-amber-300;
+  }
+
+  .transaction-refunded {
+    @apply bg-rose-400/[0.08] text-rose-300;
+  }
+
+  .avatar-violet,
+  .project-violet {
+    @apply bg-violet-400/10 text-violet-300;
+  }
+
+  .avatar-blue,
+  .project-blue {
+    @apply bg-blue-400/10 text-blue-300;
+  }
+
+  .avatar-green,
+  .project-green {
+    @apply bg-emerald-400/10 text-emerald-300;
+  }
+
+  .avatar-amber {
+    @apply bg-amber-400/10 text-amber-300;
+  }
+
+  .project-progress-violet {
+    @apply bg-violet-400;
+  }
+
+  .project-progress-blue {
+    @apply bg-blue-400;
+  }
+
+  .project-progress-green {
+    @apply bg-emerald-400;
+  }
+}
+
+.sidebar-shell {
+  box-shadow: 14px 0 50px rgb(0 0 0 / 8%);
+  transition: background-color 200ms ease, border-color 200ms ease, transform 240ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.nav-item:hover svg {
+  transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-shell {
+    width: min(280px, calc(100vw - 42px)) !important;
+    transform: translateX(-110%);
+    transition: transform 240ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  }
+
+  .sidebar-shell.sidebar-mobile-open {
+    transform: translateX(0);
+  }
+}

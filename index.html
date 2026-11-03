@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0f1a">
+    <meta name="description" content="AI Khan is a local workspace for organizing prospects and reviewing simulated lead-generation workflows.">
+    <title>AI Khan — Prospect workspace</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell" id="app-shell">
+      <button class="nav-backdrop" id="nav-backdrop" aria-label="Close navigation" tabindex="-1"></button>
+      <aside class="sidebar" id="sidebar" aria-label="Application sidebar">
+        <a class="brand" href="#overview" data-view="overview" aria-label="AI Khan home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36"><path d="M7 26.5 17.8 7l3.1 5.7 8.1 13.8H7Z"/><path d="m14.1 26.5 4.8-8.6 4.9 8.6"/></svg>
+          </span>
+          <span class="brand-copy"><strong>AI Khan</strong><small>LEAD WORKSPACE</small></span>
+        </a>
+        <button class="sidebar-close" id="mobile-nav-close" type="button" data-action="close-nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span>Close menu</span>
+        </button>
+
+        <div class="nav-section-label">WORKSPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="#overview" data-view="overview" aria-label="Overview">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+            <span class="nav-label">Overview</span>
+          </a>
+          <a class="nav-link" href="#prospects" data-view="prospects" aria-label="Prospects">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20v-1.4a6.2 6.2 0 0 1 12.4 0V20M17 5.5a3.4 3.4 0 0 1 0 6.5m1.2 2.3a5.2 5.2 0 0 1 3 4.7v1"/></svg>
+            <span class="nav-label">Prospects</span><span class="nav-count" id="nav-count">—</span>
+          </a>
+          <div class="nav-divider"></div>
+          <div class="nav-section-label">SIMULATED</div>
+          <a class="nav-link" href="#discovery" data-view="discovery" aria-label="Lead discovery, simulated">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.6"/><path d="m16 16 4.5 4.5M10.8 7.7v6.2m-3.1-3.1h6.2"/></svg>
+            <span class="nav-label">Lead discovery</span><span class="nav-sim-tag">DEMO</span>
+          </a>
+          <a class="nav-link" href="#campaigns" data-view="campaigns" aria-label="Campaigns, simulated">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 5.5 8.5 7 8.5-7M5 19h14a1.5 1.5 0 0 0 1.5-1.5V6.5A1.5 1.5 0 0 0 19 5H5a1.5 1.5 0 0 0-1.5 1.5v11A1.5 1.5 0 0 0 5 19Z"/></svg>
+            <span class="nav-label">Campaigns</span><span class="nav-sim-tag">DEMO</span>
+          </a>
+          <a class="nav-link" href="#outreach" data-view="outreach" aria-label="Outreach, simulated">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-11.3 6.5L4 20l1.8-4.7A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8.5 11.5h.01m3.5 0h.01m3.5 0h.01"/></svg>
+            <span class="nav-label">Outreach</span><span class="nav-sim-tag">DEMO</span>
+          </a>
+          <a class="nav-link" href="#sites" data-view="sites" aria-label="Site generator, simulated">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18m-14-2h.01M10 7h.01"/></svg>
+            <span class="nav-label">Site generator</span><span class="nav-sim-tag">DEMO</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="local-status"><span class="local-status-dot"></span><span><strong>Local database</strong><small>SQLite · integrations off</small></span></div>
+          <a class="nav-link settings-link" href="#settings" data-view="settings" aria-label="Settings">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1a1.7 1.7 0 0 1-2.4 2.4l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a1.7 1.7 0 0 1-3.4 0v-.2a1.7 1.7 0 0 0-2.9-1.2l-.1.1a1.7 1.7 0 0 1-2.4-2.4l.1-.1a1.7 1.7 0 0 0-1.2-2.9H4a1.7 1.7 0 0 1 0-3.4h.2a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a1.7 1.7 0 0 1 2.4-2.4l.1.1a1.7 1.7 0 0 0 2.9-1.2V2a1.7 1.7 0 0 1 3.4 0v.2a1.7 1.7 0 0 0 2.9 1.2l.1-.1a1.7 1.7 0 0 1 2.4 2.4l-.1.1a1.7 1.7 0 0 0 1.2 2.9h.2a1.7 1.7 0 0 1 0 3.4h-.2a1.7 1.7 0 0 0-1.2 2.9Z"/></svg>
+            <span class="nav-label">Settings</span>
+          </a>
+          <div class="sidebar-foot">AI KHAN <span>·</span> PRIVATE WORKSPACE</div>
+        </div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <button class="icon-button nav-toggle" id="nav-toggle" aria-label="Collapse navigation" aria-controls="sidebar" aria-expanded="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <div class="topbar-heading">
+            <span class="topbar-overline">AI KHAN <span>/</span> LOCAL WORKSPACE</span>
+            <strong id="topbar-title">Overview</strong>
+          </div>
+          <div class="topbar-actions">
+            <span class="privacy-pill"><span></span> Local data only</span>
+            <button class="button button-primary topbar-add" data-action="add-prospect">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-7-7h14"/></svg><span>Add prospect</span>
+            </button>
+          </div>
+        </header>
+
+        <main id="main-content" class="content" tabindex="-1">
+          <section class="view-section is-current" id="overview-view" data-page="overview" aria-labelledby="overview-title">
+            <div class="page-heading animate-in">
+              <div><div class="eyebrow"><span class="eyebrow-mark"></span> YOUR LOCAL PIPELINE</div><h1 id="overview-title">Prospect workspace</h1><p class="page-subtitle">A clear view of the businesses saved in this workspace.</p></div>
+              <div class="heading-actions">
+                <button class="button button-secondary" data-nav="discovery">Explore discovery <span aria-hidden="true">↗</span></button>
+                <button class="button button-primary" data-action="add-prospect"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-7-7h14"/></svg>Add prospect</button>
+              </div>
+            </div>
+
+            <div class="notice-bar notice-simulated animate-in">
+              <span class="notice-icon" aria-hidden="true">i</span>
+              <p><strong>Discovery, outreach and website generation are simulated.</strong> No external services are connected; only prospect records are saved.</p>
+              <span class="sim-badge">SIMULATED</span>
+            </div>
+
+            <div class="metric-grid animate-in" aria-label="Prospect totals">
+              <article class="metric-card"><div class="metric-top"><span>Total prospects</span><span class="metric-icon icon-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M2.8 20v-1.4a6.2 6.2 0 0 1 12.4 0V20M17 5.5a3.3 3.3 0 0 1 0 6.5m1.2 2.3a5.2 5.2 0 0 1 3 4.7v1"/></svg></span></div><strong class="metric-value" id="overview-total">—</strong><span class="metric-note">Saved records, including demos</span></article>
+              <article class="metric-card"><div class="metric-top"><span>New</span><span class="metric-icon icon-violet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-8-8h16"/></svg></span></div><strong class="metric-value" id="overview-new">—</strong><span class="metric-note">Status: new</span></article>
+              <article class="metric-card"><div class="metric-top"><span>In conversation</span><span class="metric-icon icon-amber"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-11.3 6.5L4 20l1.8-4.7A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8.5 11.5h.01m3.5 0h.01m3.5 0h.01"/></svg></span></div><strong class="metric-value" id="overview-conversation">—</strong><span class="metric-note">Contacted or replied</span></article>
+              <article class="metric-card"><div class="metric-top"><span>Demo records</span><span class="metric-icon icon-teal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9L12 3Z"/></svg></span></div><strong class="metric-value" id="overview-demo">—</strong><span class="metric-note">Fictional sample prospects</span></article>
+            </div>
+
+            <div class="section-grid overview-grid">
+              <section class="surface-panel recent-panel animate-in">
+                <div class="panel-heading"><div><span class="panel-kicker">RECORDS</span><h2>Recently added</h2><p>Most recently saved prospects in your local database.</p></div><a class="text-link" href="#prospects" data-view="prospects">All prospects <span aria-hidden="true">→</span></a></div>
+                <div class="table-scroll">
+                  <table class="data-table" aria-label="Recently added prospects">
+                    <thead><tr><th scope="col">BUSINESS</th><th scope="col">LOCATION</th><th scope="col">STATUS</th><th scope="col">ADDED</th></tr></thead>
+                    <tbody id="overview-prospects-body"></tbody>
+                  </table>
+                </div>
+                <div class="loading-state" id="overview-loading" role="status"><span class="spinner" aria-hidden="true"></span>Loading saved prospects…</div>
+                <div class="inline-message hidden" id="overview-error" role="alert"><span id="overview-error-message"></span><button class="button button-quiet button-small" data-action="retry-prospects">Try again</button></div>
+                <div class="empty-state hidden" id="overview-empty"><span class="empty-glyph" aria-hidden="true">⌕</span><strong>No prospects yet</strong><p>Add a business manually to begin your local pipeline.</p><button class="button button-secondary" data-action="add-prospect">Add your first prospect</button></div>
+              </section>
+
+              <aside class="surface-panel status-panel animate-in">
+                <div class="panel-heading"><div><span class="panel-kicker">PIPELINE STATUS</span><h2>Current stages</h2><p>Counts are calculated from saved records.</p></div></div>
+                <ul class="status-summary" id="overview-status-summary" aria-label="Prospects by status"></ul>
+                <div class="panel-footnote"><span class="footnote-dot"></span> Status is stored with each prospect.</div>
+              </aside>
+            </div>
+            <div class="connection-strip animate-in"><span class="connection-check" aria-hidden="true">✓</span><span><strong>SQLite persistence active</strong><small>Your prospects and status changes are stored on this device's server.</small></span><span class="connection-badge">CONNECTED</span></div>
+          </section>
+
+          <section class="view-section hidden" id="prospects-view" data-page="prospects" aria-labelledby="prospects-title">
+            <div class="page-heading animate-in">
+              <div><div class="eyebrow"><span class="eyebrow-mark"></span> YOUR LOCAL PIPELINE</div><h1 id="prospects-title">Prospects</h1><p class="page-subtitle">Search, organize, and update the businesses saved to this workspace.</p></div>
+              <button class="button button-primary" data-action="add-prospect"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-7-7h14"/></svg>Add prospect</button>
+            </div>
+            <div class="metric-grid compact-metrics animate-in" aria-label="Prospect counts">
+              <article class="metric-card"><div class="metric-top"><span>All records</span><span class="metric-icon icon-blue">01</span></div><strong class="metric-value" id="prospect-total">—</strong><span class="metric-note">Demo and user-added</span></article>
+              <article class="metric-card"><div class="metric-top"><span>New</span><span class="metric-icon icon-violet">02</span></div><strong class="metric-value" id="prospect-new">—</strong><span class="metric-note">Awaiting next step</span></article>
+              <article class="metric-card"><div class="metric-top"><span>In conversation</span><span class="metric-icon icon-amber">03</span></div><strong class="metric-value" id="prospect-conversation">—</strong><span class="metric-note">Contacted or replied</span></article>
+              <article class="metric-card"><div class="metric-top"><span>Demo records</span><span class="metric-icon icon-teal">04</span></div><strong class="metric-value" id="prospect-demo">—</strong><span class="metric-note">Fictional samples</span></article>
+            </div>
+            <section class="surface-panel prospects-panel animate-in" aria-label="Prospect list">
+              <div class="list-toolbar">
+                <div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input id="prospect-search" type="search" placeholder="Search business or contact name" aria-label="Search prospects by business or contact name" aria-controls="all-prospects-body" aria-describedby="prospect-result-count"></div>
+                <label class="filter-control"><span>Status</span><select class="filter-select" id="status-filter" aria-label="Filter prospects by status" aria-controls="all-prospects-body"><option value="all">All</option><option value="new">New</option><option value="contacted">Contacted</option><option value="replied">Replied</option><option value="opted-out">Opted out</option><option value="client">Client</option></select></label>
+                <label class="filter-control"><span>Score</span><select class="filter-select" id="score-filter" aria-label="Filter prospects by score"><option value="all">Any score</option><option value="80">80 and above</option><option value="60">60 and above</option></select></label>
+                <button class="button button-quiet clear-button" id="clear-filters" data-action="clear-filters">Clear filters</button>
+                <button class="button button-secondary export-button" id="export-prospects" type="button" data-action="export-csv" aria-label="Export currently shown prospects as CSV">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 17v3h14v-3"/></svg><span>Export CSV</span>
+                </button>
+              </div>
+              <div class="inline-message hidden" id="prospect-error" role="alert"><span id="prospect-error-message"></span><button class="button button-quiet button-small" data-action="retry-prospects">Try again</button></div>
+              <div class="table-scroll" id="prospects-table-wrap">
+                <table class="data-table prospect-table" aria-label="All prospects">
+                  <thead><tr><th scope="col">BUSINESS</th><th scope="col">CATEGORY</th><th scope="col">LOCATION</th><th scope="col">SCORE</th><th scope="col">STATUS</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+                  <tbody id="all-prospects-body"></tbody>
+                </table>
+              </div>
+              <div class="loading-state" id="prospects-loading" role="status"><span class="spinner" aria-hidden="true"></span>Loading prospects from SQLite…</div>
+              <div class="empty-state hidden" id="prospects-empty"><span class="empty-glyph" aria-hidden="true">⌕</span><strong id="prospects-empty-title">No prospects found</strong><p id="prospects-empty-copy">Try a different search or adjust your filters.</p><button class="button button-secondary" id="prospects-empty-action" data-action="clear-filters">Clear filters</button></div>
+              <div class="panel-footer"><span id="prospect-result-count" aria-live="polite">Loading saved records…</span><span class="footer-data-note"><span class="footnote-dot"></span> Saved locally</span></div>
+            </section>
+            <p class="disclaimer-line"><span class="demo-mini">DEMO</span> Sample rows are fictional. User-added records are stored locally and have not been independently verified.</p>
+          </section>
+
+          <section class="view-section hidden" id="discovery-view" data-page="discovery" aria-labelledby="discovery-title">
+            <div class="page-heading animate-in"><div><div class="eyebrow"><span class="eyebrow-mark"></span> SIMULATED WORKFLOW</div><h1 id="discovery-title">Lead discovery</h1><p class="page-subtitle">A preview of how local prospect discovery could work once a permitted source is connected.</p></div><span class="sim-badge large-badge">SIMULATED · NO SEARCH</span></div>
+            <section class="surface-panel simulation-panel animate-in">
+              <div class="simulation-icon icon-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5M10.8 7.7v6.2m-3.1-3.1h6.2"/></svg></div>
+              <div class="simulation-copy"><span class="panel-kicker">NO EXTERNAL SEARCH IS RUN</span><h2>Discovery is not connected</h2><p>This screen does not query Google Maps, scrape websites, or add records. You can add a prospect manually from the Prospects screen.</p><div class="simulation-actions"><a class="button button-secondary" href="#prospects" data-view="prospects">Go to prospects</a><button class="button button-quiet" data-action="preview-discovery">Preview the planned steps</button></div></div>
+            </section>
+            <section class="surface-panel workflow-panel animate-in"><div class="panel-heading"><div><span class="panel-kicker">WHEN AN APPROVED SOURCE IS ADDED</span><h2>Planned discovery flow</h2><p>These are product steps, not currently running automation.</p></div></div><ol class="workflow-list"><li><span>01</span><div><strong>Choose an area and niche</strong><p>Use the workspace settings to define the target.</p></div><em>PLANNED</em></li><li><span>02</span><div><strong>Review source results</strong><p>Confirm business details from a permitted provider.</p></div><em>PLANNED</em></li><li><span>03</span><div><strong>Save selected prospects</strong><p>Add only records you choose to the local SQLite list.</p></div><em>PLANNED</em></li></ol></section>
+          </section>
+
+          <section class="view-section hidden" id="campaigns-view" data-page="campaigns" aria-labelledby="campaigns-title">
+            <div class="page-heading animate-in"><div><div class="eyebrow"><span class="eyebrow-mark"></span> SIMULATED WORKFLOW</div><h1 id="campaigns-title">Campaigns</h1><p class="page-subtitle">Review the proposed outreach workflow. No campaign is created or started.</p></div><span class="sim-badge large-badge">SIMULATED · NO SEND</span></div>
+            <section class="surface-panel simulation-panel campaign-simulation animate-in">
+              <div class="simulation-icon icon-violet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 5.5 8.5 7 8.5-7M5 19h14a1.5 1.5 0 0 0 1.5-1.5V6.5A1.5 1.5 0 0 0 19 5H5a1.5 1.5 0 0 0-1.5 1.5v11A1.5 1.5 0 0 0 5 19Z"/></svg></div>
+              <div class="simulation-copy"><span class="panel-kicker">NO EMAILS ARE SENT</span><h2>Campaigns are not connected</h2><p>There is no Gmail connection or campaign scheduler. This page does not contact prospects, send messages, or record campaign results.</p><button class="button button-secondary" data-action="preview-campaign">Preview a sample workflow</button></div>
+            </section>
+            <section class="surface-panel workflow-panel animate-in"><div class="panel-heading"><div><span class="panel-kicker">PLANNED · NOT ACTIVE</span><h2>Before outreach can be enabled</h2><p>Future campaign controls should require review and explicit approval.</p></div></div><div class="safety-grid"><div><span class="safety-index">01</span><strong>Verify the prospect</strong><p>Confirm contact details and that outreach is appropriate.</p></div><div><span class="safety-index">02</span><strong>Review the message</strong><p>Check sender identity, content, and required mailing details.</p></div><div><span class="safety-index">03</span><strong>Approve each send</strong><p>No bulk or background sending should occur without consent.</p></div></div></section>
+          </section>
+
+          <section class="view-section hidden" id="outreach-view" data-page="outreach" aria-labelledby="outreach-title">
+            <div class="page-heading animate-in"><div><div class="eyebrow"><span class="eyebrow-mark"></span> SIMULATED WORKFLOW</div><h1 id="outreach-title">Outreach</h1><p class="page-subtitle">A future place to review drafts and conversations—not a connected mailbox.</p></div><span class="sim-badge large-badge">SIMULATED · NO MAILBOX</span></div>
+            <section class="surface-panel simulation-panel animate-in">
+              <div class="simulation-icon icon-amber"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 5.5 8.5 7 8.5-7M5 19h14a1.5 1.5 0 0 0 1.5-1.5V6.5A1.5 1.5 0 0 0 19 5H5a1.5 1.5 0 0 0-1.5 1.5v11A1.5 1.5 0 0 0 5 19Z"/></svg></div>
+              <div class="simulation-copy"><span class="panel-kicker">NO OUTREACH HISTORY IS STORED</span><h2>Email is not connected</h2><p>No Gmail API, reply monitoring, message sending, or outreach log is implemented. Status changes in Prospects are saved locally but do not send messages.</p><a class="button button-secondary" href="#prospects" data-view="prospects">Review prospects</a></div>
+            </section>
+            <section class="surface-panel workflow-panel animate-in"><div class="panel-heading"><div><span class="panel-kicker">SAFE PREVIEW ONLY</span><h2>What this screen will support</h2><p>Nothing below represents a message that has actually been sent.</p></div></div><div class="outreach-placeholder"><span class="placeholder-line"></span><span class="placeholder-line short"></span><span class="placeholder-pill">DRAFT REVIEW · NOT AVAILABLE</span></div></section>
+          </section>
+
+          <section class="view-section hidden" id="sites-view" data-page="sites" aria-labelledby="sites-title">
+            <div class="page-heading animate-in"><div><div class="eyebrow"><span class="eyebrow-mark"></span> SIMULATED WORKFLOW</div><h1 id="sites-title">Site generator</h1><p class="page-subtitle">Illustrative concepts only. No website is generated, hosted, or published.</p></div><span class="sim-badge large-badge">SIMULATED · NOT PUBLISHED</span></div>
+            <div class="notice-bar notice-simulated animate-in"><span class="notice-icon" aria-hidden="true">i</span><p><strong>Concept previews are visual placeholders.</strong> They are not built for a business and should not be presented as completed demos.</p><span class="sim-badge">SAMPLE</span></div>
+            <div class="concept-grid animate-in" id="site-grid"></div>
+            <div class="empty-state hidden" id="sites-empty"><span class="empty-glyph" aria-hidden="true">◇</span><strong>No sample concepts available</strong><p>Sample previews are shown only for the fictional demo prospects.</p></div>
+          </section>
+
+          <section class="view-section hidden" id="settings-view" data-page="settings" aria-labelledby="settings-title">
+            <div class="page-heading animate-in"><div><div class="eyebrow"><span class="eyebrow-mark"></span> WORKSPACE PREFERENCES</div><h1 id="settings-title">Settings</h1><p class="page-subtitle">Saved in this browser for reference. These settings do not start discovery or outreach.</p></div></div>
+            <div class="settings-layout animate-in">
+              <form class="surface-panel settings-form" id="settings-form" novalidate>
+                <div class="panel-heading"><div><span class="panel-kicker">LOCAL PREFERENCES</span><h2>Workspace details</h2><p>Stored in this browser only.</p></div></div>
+                <div class="settings-fields">
+                  <label class="form-label">Target city<input id="setting-city" name="city" maxlength="120" placeholder="e.g. Portland"></label>
+                  <label class="form-label">Country<input id="setting-country" name="country" maxlength="120" placeholder="e.g. United States"></label>
+                  <label class="form-label full-span">Business niche<input id="setting-niche" name="niche" maxlength="120" placeholder="e.g. independent coffee shops"></label>
+                  <label class="form-label full-span">Maximum leads per day<input id="setting-limit" name="limit" type="number" min="1" max="100" inputmode="numeric" placeholder="20"><small>Preference only. No discovery runs in this version.</small></label>
+                </div>
+                <div class="settings-divider"></div>
+                <div class="panel-heading settings-subheading"><div><span class="panel-kicker">SENDER IDENTITY</span><h2>Details for future review</h2><p>Not used to send messages.</p></div></div>
+                <div class="settings-fields">
+                  <label class="form-label">Sender name<input id="setting-sender-name" name="senderName" maxlength="120" placeholder="Your name"></label>
+                  <label class="form-label">Sender email<input id="setting-sender-email" name="senderEmail" type="email" maxlength="254" placeholder="you@example.com"></label>
+                  <label class="form-label full-span">Physical mailing address<textarea id="setting-address" name="address" rows="3" maxlength="500" placeholder="Street address, city, region, postal code, country"></textarea><small>Required before commercial email outreach could be configured.</small></label>
+                </div>
+                <div class="settings-actions"><p class="save-message" id="settings-saved" role="status" aria-live="polite"></p><button class="button button-primary" type="submit">Save preferences</button></div>
+              </form>
+              <aside class="settings-aside">
+                <section class="surface-panel settings-note"><span class="panel-kicker">INTEGRATIONS</span><h2>Everything external is off</h2><p>There are no connected discovery, AI, hosting, or email providers. This app makes no integration requests.</p><ul><li><span>Google Maps</span><strong>Not connected</strong></li><li><span>Gmail</span><strong>Not connected</strong></li><li><span>AI site generation</span><strong>Not connected</strong></li></ul></section>
+                <section class="surface-panel settings-note"><span class="panel-kicker">DATA & PRIVACY</span><h2>Local-first by design</h2><p>Prospects are held in the local SQLite database. Workspace preferences remain in this browser's local storage.</p><a href="#prospects" data-view="prospects" class="text-link">Return to prospects <span aria-hidden="true">→</span></a></section>
+              </aside>
+            </div>
+          </section>
+          <footer class="app-footer"><span>AI Khan <span class="footer-separator">/</span> Local prospect workspace</span><span>No external integrations <span class="footer-separator">·</span> Demo workflows are labeled</span></footer>
+        </main>
+      </div>
+    </div>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <dialog class="app-dialog" id="app-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+    <noscript><p class="noscript-message">JavaScript is required to load and manage prospects. No external scripts are used.</p></noscript>
+    <script src="app.js"></script>
+  </body>
+</html>

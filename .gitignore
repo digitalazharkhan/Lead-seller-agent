@@ -1,0 +1,9 @@
+node_modules/
+.venv/
+.next/
+__pycache__/
+.env
+.env.*
+*.sqlite3
+emails.json
+leads_*.json
