@@ -7,3 +7,8 @@ __pycache__/
 *.sqlite3
 emails.json
 leads_*.json
+sent_log.json
+unsubscribed.txtsent_log.json
+unsubscribed.txt
+backup_leads.json
+backup_leads.json

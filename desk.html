@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Khan: leads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b121a;--sf:#111b25;--rs:#172431;--ink:#e6edf2;--mut:#8a9ba8;--line:#223445;--kashi:#5b8def;--me:#2c5fb8;--turq:#2fb5a8;--gold:#f0b83c;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{height:100%;margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.app{height:100%;display:grid;grid-template-columns:196px minmax(0,1fr) 340px}
+.side{background:var(--sf);border-right:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:6px}
+.brand{display:flex;align-items:center;gap:10px;padding:0 8px 16px;font-weight:700;font-size:18px}
+.brand svg{width:28px;height:28px;stroke:var(--kashi);fill:none;stroke-width:2.2}
+.nav{display:flex;align-items:center;gap:10px;background:none;border:0;border-radius:8px;padding:9px 10px;color:var(--mut);cursor:pointer;text-align:left}
+.nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none}
+.nav:hover{color:var(--ink)}.nav[aria-current="true"]{background:var(--rs);color:var(--ink)}
+.mo{display:none}
+.me{margin-top:auto;display:flex;align-items:center;gap:10px;padding:8px;font-size:14px;color:var(--mut)}
+.av{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff}
+.main{min-width:0;display:flex;flex-direction:column;overflow:auto;padding:20px 24px}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative}
+.top h1{margin:0;font-size:24px;letter-spacing:-.02em;margin-right:auto}
+.top input{background:var(--sf);border:1px solid var(--line);border-radius:8px;padding:8px 12px;width:200px}
+.btn{background:var(--me);border:0;border-radius:8px;padding:8px 14px;color:#fff;font-weight:600;cursor:pointer}
+.btn.g{background:none;border:1px solid var(--line);color:var(--ink);font-weight:400}
+.pop{position:absolute;right:0;top:46px;z-index:5;width:290px;background:var(--rs);border:1px solid var(--line);border-radius:10px;padding:14px;display:none;flex-direction:column;gap:10px;box-shadow:0 12px 32px #0008}
+.pop.on{display:flex}
+.pop label{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
+.pop select{background:var(--sf);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+.pop .two{display:flex;gap:8px}.pop .two .btn{flex:1}
+.pop small{color:var(--mut)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.st{background:var(--sf);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.st span{font-size:13px;color:var(--mut)}.st b{display:block;font-size:26px;line-height:1.2;letter-spacing:-.02em}
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px;max-width:520px}
+.tile{text-align:center;font-size:12.5px;color:var(--mut)}
+.tile div{width:44px;height:44px;margin:0 auto 4px;border:1.5px dashed var(--line);border-radius:6px;display:grid;place-items:center;transition:background .4s,border-color .4s}
+.tile svg{width:60%;stroke:var(--mut);fill:none;stroke-width:2}
+.tile.run div{border:1.5px solid var(--gold);animation:glow 1.1s ease-in-out infinite alternate}
+.tile.run svg{stroke:var(--gold);animation:spin 2.4s linear infinite}
+.tile.done div{background:var(--me);border:1.5px solid var(--me);animation:pop .45s}
+.tile.done svg{stroke:var(--gold)}.tile.done{color:var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.6fr) 84px 76px;gap:12px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px;cursor:pointer;border-left:3px solid transparent}
+.row>*{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row:hover{background:var(--sf)}.row[aria-selected="true"]{background:var(--rs);border-left-color:var(--kashi)}
+.row.h{cursor:default;color:var(--mut);font-size:13px;background:none}
+.row.fresh{animation:slide .4s both;animation-delay:calc(var(--i)*70ms)}
+.nm{display:flex;align-items:center;gap:10px}.nm .av{width:28px;height:28px;font-size:12px}
+.bar{display:block;height:4px;background:var(--line);border-radius:2px;margin-top:3px}.bar i{display:block;height:100%;background:var(--turq);border-radius:2px;transition:width .6s}
+.pill{font-size:12px;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--mut) 18%,transparent);color:var(--mut);width:fit-content}
+.pill.ready,.pill.contacted{background:color-mix(in srgb,var(--turq) 20%,transparent);color:var(--turq)}
+.pill.skipped,.pill.opted-out{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)}
+.empty{color:var(--mut);padding:18px 12px}
+.panel{background:var(--sf);border-left:1px solid var(--line);min-height:0;display:flex;flex-direction:column}
+.pd,.pc{flex:1;min-height:0;display:flex;flex-direction:column}
+.pd{overflow:auto;padding:20px}.pc .log{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+[data-v="chat"] .pd{display:none}[data-v]:not([data-v="chat"]) .pc{display:none}
+.dh{display:flex;align-items:center;gap:12px;margin-bottom:6px}.dh .av{width:46px;height:46px;font-size:19px}
+.dh h2{margin:0;font-size:18px;line-height:1.25}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}.kv span{color:var(--mut)}
+.tl{margin:16px 0 0;padding:0;list-style:none;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 14px 16px;font-size:14px}
+.tl li:before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--turq)}
+.pd h3{margin:20px 0 4px;font-size:14px;font-weight:600}
+.msg{max-width:90%;animation:rise .25s ease-out both}
+.usr{align-self:flex-end;background:var(--me);color:#fff;padding:8px 14px;border-radius:14px 14px 3px 14px}
+.bot{border-left:3px solid var(--turq);padding:2px 0 2px 12px}.bot p{margin:0 0 8px}
+.mail{margin-top:8px;border:1px solid var(--line);background:var(--rs);border-radius:6px;padding:10px 14px;font-size:14px}.mail p{margin:0 0 8px}.mail pre{white-space:pre-wrap;font:inherit;margin:8px 0 0}
+.dots span{display:inline-block;width:7px;height:7px;margin-right:4px;border-radius:50%;background:var(--turq);animation:bob .9s ease-in-out infinite}
+.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 10px}
+.chips button{background:none;border:1px solid var(--line);border-radius:999px;padding:3px 11px;font-size:13.5px;cursor:pointer}.chips button:hover{border-color:var(--kashi);color:var(--kashi)}
+.cmp{display:flex;gap:8px;padding:0 18px}.cmp input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.note{margin:8px 18px 14px;font-size:12.5px;color:var(--mut)}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}}@keyframes bob{50%{transform:translateY(-4px);opacity:.5}}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes glow{to{box-shadow:0 0 0 5px color-mix(in srgb,var(--gold) 28%,transparent)}}
+@keyframes pop{40%{transform:scale(1.1)}}@keyframes slide{from{opacity:0;transform:translateX(-12px)}}
+@media (max-width:1100px){.app{grid-template-columns:70px minmax(0,1fr) 300px}.brand b,.nav b,.me span{display:none}.nav{justify-content:center}}
+@media (max-width:800px){
+ .app{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
+ .side{flex-direction:row;padding:8px;border-right:0;border-bottom:1px solid var(--line);gap:4px}.brand,.me{display:none}
+ .nav{flex:1;justify-content:center}.nav b{display:inline}.mo{display:flex}
+ .stats{grid-template-columns:repeat(2,1fr)}.main{padding:14px}.top input{width:100%;order:3}
+ .row{grid-template-columns:minmax(0,1.6fr) minmax(0,1.2fr) 56px 62px;font-size:13px;gap:8px}
+ [data-v="leads"] .panel,[data-v="detail"] .main,[data-v="chat"] .main{display:none}.panel{border-left:0}
+ .pop{right:auto;left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app" id="app" data-v="leads">
+ <nav class="side" aria-label="Menu">
+  <div class="brand"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="3.5"/></svg><b>AI Khan</b></div>
+  <button class="nav" data-v="leads" aria-current="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-4 3.2-6 6.5-6s5.9 2 6.5 6M16 4.5a3.5 3.5 0 010 7M18 14c2 .6 3.3 2.5 3.5 6"/></svg><b>Leads</b></button>
+  <button class="nav mo" data-v="detail"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 11h8M8 15h5"/></svg><b>Detail</b></button>
+  <button class="nav" data-v="chat"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><b>Assistant</b></button>
+  <div class="me"><div class="av" style="background:var(--turq)">A</div><span>Azhar</span></div>
+ </nav>
+ <main class="main">
+  <div class="top">
+   <h1>Leads</h1>
+   <input id="q" placeholder="Search restaurant or email" aria-label="Search">
+   <button class="btn" id="dlb" aria-expanded="false">Download good leads</button>
+   <div class="pop" id="pop">
+    <label>Minimum score <select id="min"><option>65</option><option>70</option><option selected>75</option><option>80</option><option>90</option></select></label>
+    <label>Only leads with an email <input type="checkbox" id="onlyM" checked></label>
+    <small id="pc2">Download ke liye leads match: 0</small>
+    <div class="two"><button class="btn" data-f="csv">CSV</button><button class="btn g" data-f="json">JSON</button></div>
+    <small id="dmsg">CSV Excel mein khul jati hai. Do-not-contact leads shamil nahi hoti.</small>
+   </div>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="pipe" id="pipe"></div>
+  <div id="tbl"></div>
+ </main>
+ <aside class="panel" aria-label="Panel">
+  <div class="pd" id="pd"></div>
+  <div class="pc">
+   <div class="log" id="log" aria-live="polite"></div>
+   <div class="chips" id="chips"></div>
+   <div class="cmp"><input id="in" autocomplete="off" aria-label="Message" placeholder="leads dhoondo, find emails, sab chalao"><button class="btn" id="go">Bhejein</button></div>
+   <p class="note">Send step yahan sirf dry-run hai. Asal emails terminal se jati hain: python3 sender.py --send --limit 5</p>
+  </div>
+ </aside>
+</div>
+<script>
+const $=s=>document.querySelector(s),sleep=ms=>new Promise(r=>setTimeout(r,ms)),app=$("#app");
+const T=["Discover","Emails","Score","Pitch","Send"],STEP=["discover","emails","score",null,"send"],COL=["#2c5fb8","#16877d","#a1621f","#7a4fb0","#b0455a"];
+const STAR='<svg viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="3.5"/></svg>';
+let leads=[],done=[0,0,0,0,0],busy=false,selN="",fresh=false;
+$("#pipe").innerHTML=T.map((t,i)=>`<div class="tile" id="t${i}"><div>${STAR}</div>${t}</div>`).join("");
+const tile=(i,s)=>{$("#t"+i).className="tile "+s};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const av=n=>`<span class="av" style="background:${COL[n.charCodeAt(0)%5]}">${esc(n[0])}</span>`;
+const withMail=()=>leads.filter(l=>l.e).length;
+const good=()=>leads.filter(l=>l.s!=null&&l.s>=+$("#min").value&&(!$("#onlyM").checked||l.e)&&l.st!=="opted-out");
+async function api(p,o={}){o.headers={...(o.headers||{}),"X-Desk":"1"};const r=await fetch(p,o);const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"HTTP "+r.status);return j}
+async function load(){
+ const d=await api("/api/leads");
+ leads=d.leads.map(x=>({n:x.name,e:x.email||"",all:x.all_emails||[],s:x.score==null?null:x.score,st:x.status,phone:x.phone||"",site:x.website||"",sent:x.sent_at||""}));
+ leads.sort((a,b)=>(b.s??-1)-(a.s??-1));
+ if(!leads.some(l=>l.n===selN))selN=leads.length?leads[0].n:"";
+ render();
+}
+function syncTiles(){
+ done=[leads.length>0,withMail()>0,leads.some(l=>l.s!=null),done[3],done[4]].map(Number);
+ done.forEach((d,i)=>tile(i,d?"done":""));
+}
+function view(v){app.dataset.v=v;document.querySelectorAll(".nav").forEach(b=>b.setAttribute("aria-current",b.dataset.v===v))}
+document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>view(b.dataset.v));
+const logOf=l=>{const a=["Found on OpenStreetMap",l.e?"Email found: "+l.e:"No email on their website"];if(l.s!=null)a.push("Scored "+l.s);if(l.sent)a.push("Emailed on "+l.sent.slice(0,10));if(l.st==="opted-out")a.push("Do not contact");else if(l.st==="ready")a.push("Ready to send (real send: terminal)");return a};
+function render(){
+ const g=good().length,q=$("#q").value.toLowerCase();
+ $("#stats").innerHTML=[["Total leads",leads.length],["With email",withMail()],["Good leads ("+$("#min").value+"+)",g],["Ready to send",leads.filter(l=>l.st==="ready").length]].map(s=>`<div class="st"><span>${s[0]}</span><b>${s[1]}</b></div>`).join("");
+ $("#pc2").textContent="Download ke liye leads match: "+g;
+ const rows=leads.map((l,i)=>[l,i]).filter(([l])=>(l.n+l.e).toLowerCase().includes(q));
+ $("#tbl").innerHTML=!leads.length?'<p class="empty">Abhi koi lead nahi. Assistant mein likhein “leads dhoondo” ya “find leads”.</p>':
+ '<div class="row h"><span>Restaurant</span><span>Email</span><span>Score</span><span>Status</span></div>'+
+ (rows.map(([l,i])=>`<div class="row${fresh?" fresh":""}" style="--i:${i}" data-i="${i}" aria-selected="${l.n===selN}"><span class="nm">${av(l.n)}${esc(l.n)}</span><span>${esc(l.e)||"–"}</span><span>${l.s==null?"–":l.s+'<b class="bar"><i style="width:'+l.s+'%"></i></b>'}</span><span class="pill ${l.st}">${l.st}</span></div>`).join("")||'<p class="empty">Koi match nahi mila.</p>');
+ fresh=false;detail();
+}
+function detail(){
+ const l=leads.find(x=>x.n===selN);
+ $("#pd").innerHTML=!l?'<p class="empty">Koi lead chuni nahi. Table mein kisi restaurant par click karein.</p>':
+ `<div class="dh">${av(l.n)}<div><h2>${esc(l.n)}</h2><span class="pill ${l.st}">${l.st}</span></div></div>
+ <div class="kv"><span>Email</span>${esc(l.e)||"–"}</div><div class="kv"><span>Score</span>${l.s==null?"–":l.s}</div><div class="kv"><span>Phone</span>${esc(l.phone)||"–"}</div><div class="kv"><span>Website</span><a href="${esc(l.site)}" target="_blank" rel="noopener noreferrer" style="color:var(--kashi);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(l.site.replace(/^https?:\/\/(www\.)?/,""))||"–"}</a></div>
+ <h3>Activity</h3><ul class="tl">${logOf(l).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+ ${l.e&&l.st!=="opted-out"?'<button class="btn g" id="skip">Do not contact</button>':""}`;
+ const b=$("#skip");if(b)b.onclick=async()=>{if(!confirm(l.e+" ko hamesha ke liye unsubscribed list mein daalna hai?"))return;try{await api("/api/optout",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:l.e})});await load()}catch(e){alert(e.message)}};
+}
+$("#tbl").onclick=e=>{const r=e.target.closest(".row:not(.h)");if(!r)return;selN=leads[+r.dataset.i].n;render();if(innerWidth<=800)view("detail")};
+$("#q").oninput=render;$("#min").onchange=$("#onlyM").onchange=render;
+$("#dlb").onclick=e=>{e.stopPropagation();openDl(!$("#pop").classList.contains("on"))};
+$("#pop").onclick=e=>e.stopPropagation();document.onclick=()=>openDl(false);
+function openDl(on){$("#pop").classList.toggle("on",on);$("#dlb").setAttribute("aria-expanded",on)}
+function dl(f){
+ const r=good(),m=$("#dmsg");
+ if(!r.length){m.textContent="Koi lead match nahi: pehle leads dhoondein aur score dein, ya minimum score kam karein.";return}
+ const q=c=>'"'+String(c??"").replace(/"/g,'""')+'"';
+ const data=f==="csv"?"\uFEFF"+[["name","email","phone","website","score","status"],...r.map(l=>[l.n,l.e,l.phone,l.site,l.s,l.st])].map(x=>x.map(q).join(",")).join("\r\n"):JSON.stringify(r.map(l=>({name:l.n,email:l.e,phone:l.phone,website:l.site,score:l.s,status:l.st})),null,2);
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([data],{type:f==="csv"?"text/csv;charset=utf-8":"application/json"}));a.download=`good-leads-${r.length}.${f}`;
+ document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);m.textContent=`${r.length} leads ka ${f.toUpperCase()} download ho gaya.`;
+}
+$("#pop").querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>dl(b.dataset.f));
+function say(w,h){const d=document.createElement("div");d.className="msg "+(w==="me"?"usr":"bot");d.innerHTML=w==="me"?esc(h):h;$("#log").append(d);$("#log").scrollTop=1e9}
+async function typing(ms){const d=document.createElement("div");d.className="msg bot";d.innerHTML='<div class="dots"><span></span><span></span><span></span></div>';$("#log").append(d);$("#log").scrollTop=1e9;await sleep(ms);d.remove();}
+const P=(u,a,b)=>`<p>${u?a:b}</p>`;
+const MSG=[
+ u=>u?`${leads.length} restaurants mile jinke paas pehle se website hai. Ab “emails dhoondo” likhein.`:`Found ${leads.length} restaurants that already have a website. Say “find emails” next.`,
+ u=>{const k=withMail();return u?`${k} restaurants ki email mil gayi, ${leads.length-k} ki nahi mili.`:`Found an email for ${k} of them; ${leads.length-k} have none on their site.`},
+ u=>u?`Score de diya. Sab se upar ${leads[0].n} aur ${leads[1]?leads[1].n:"–"} hain. Bhejne se pehle chains ko khud dekh lein.`:`Scored. ${leads[0].n} and ${leads[1]?leads[1].n:"–"} are on top. Review any large chains before sending.`,
+ null,
+ u=>{const k=leads.filter(l=>l.st==="ready").length;return u?`Dry-run: ${k} emails bhejne layak hain, kuch bheja nahi gaya. Asal bhejne ke liye terminal mein <b>python3 sender.py --send --limit 5</b> chalayein.`:`Dry-run: ${k} emails are ready and nothing was sent. To send for real, run <b>python3 sender.py --send --limit 5</b> in the terminal.`}
+];
+async function runStep(j,u){
+ tile(j,"run");
+ try{
+  if(j===3){
+   const p=await api("/api/pitch"+(selN?"?name="+encodeURIComponent(selN):""));
+   tile(j,"done");done[j]=1;
+   return[(u?`${esc(p.name)} ke liye pitch ka namoona (aapka naam/address environment variables se aata hai).`:`Sample pitch for ${esc(p.name)} (your name and address come from environment variables).`)+`<div class="mail"><b>Subject:</b> ${esc(p.subject)}<pre>${esc(p.body)}</pre></div>`,true];
+  }
+  await api("/api/run/"+STEP[j],{method:"POST"});
+  if(j===0)fresh=true;
+  await load();
+  if(j===0&&!leads.length){tile(j,"");return[u?"Koi restaurant nahi mila. Overpass server busy ho sakta hai, 5 minute baad dobara try karein.":"No restaurants came back. The Overpass server may be busy; try again in 5 minutes.",false]}
+  syncTiles();tile(j,"done");done[j]=1;
+  return[MSG[j](u),true];
+ }catch(e){tile(j,done[j]?"done":"");throw e}
+}
+async function runTo(i,u,force){
+ for(let j=0;j<=i;j++){
+  if(done[j]&&j<i)continue;
+  if(j===0&&done[0]&&!force){say("bot",P(u,`${leads.length} leads pehle se maujood hain. Naye sire se dhoondna ho to “dobara dhoondo” likhein (purani file backup_leads.json mein copy ho jati hai).`,`${leads.length} leads already exist. To search again, say “search again” (the old file is copied to backup_leads.json).`));continue}
+  if(j<=1)say("bot",P(u,"Chala raha hu, is mein kuch minute lag sakte hain…","Running. This can take a few minutes…"));
+  try{const[m,ok]=await runStep(j,u);say("bot","<p>"+m+"</p>");if(!ok)return}
+  catch(e){say("bot",P(u,"Yeh step nahi chala: ","This step failed: ")+"<pre class=\"mail\" style=\"white-space:pre-wrap\">"+esc(e.message)+"</pre>");return}
+  await sleep(200);
+ }
+}
+const R=[["all",/sab ?(kuch|kch)? ?(chala|chal)|poora|pura|run all|everything|full pipeline|start to end/],["dl",/download|export|save|csv/],["send",/bhej|send/],["pitch",/likh|write|pitch|preview|draft|namoon/],["show",/dikha|show|list|status|kitn|how many|top|best/],["score",/score|rank|number de/],["emails",/e-?mail|mail/],["discover",/dhoond|dhund|nikal|find|discover|search|lead/],["greet",/salam|hello|\bhi\b|hey/],["help",/help|madad|kya kar|what can/]];
+const intent=t=>{for(const[k,x]of R)if(x.test(t))return k;return"?"};
+const isUr=t=>/\b(kya|kia|hai|hain|karo|kro|kar|dhoond\w*|dhund\w*|nikal\w*|dikha\w*|bhej\w*|mujhe|mujhy|mera|meri|ke|ki|ka|aur|sab|abhi|likh\w*|batao|chala\w*|salam|assalam\w*|pehle|phir|kitni|kitne|madad|namoona|dobara)\b/.test(t);
+const IDX={discover:0,emails:1,score:2,pitch:3,send:4};
+async function handle(raw){
+ const text=raw.trim();if(!text||busy)return;busy=true;$("#in").value="";
+ say("me",text);const t=text.toLowerCase(),u=isUr(t),k=intent(t),force=/dobara|again|refresh|re-?run|naye sire/.test(t);await typing(450);
+ try{
+ if(k in IDX)await runTo(IDX[k],u,force);else if(k==="all")await runTo(4,u,force);
+ else if(k==="dl"){openDl(true);say("bot",P(u,"Download ka box upar khol diya hai. Minimum score aur format chun lein.","I opened the download box at the top. Pick a minimum score and a format."))}
+ else if(k==="show"){if(!leads.length)say("bot",P(u,"Abhi koi lead nahi. Pehle “leads dhoondo” likhein.","No leads yet. Say “find leads” first."));
+  else{const top=leads.slice(0,3).map(l=>l.n).join(", ");say("bot",P(u,`${leads.length} leads hain, ${withMail()} ki email mili hai. Pehli teen: ${top}.`,`${leads.length} leads, ${withMail()} with an email. First three: ${top}.`))}}
+ else if(k==="greet")say("bot","<p>Assalam-o-Alaikum! Roman Urdu ya English, jis mein chahein likhein. / Write in Roman Urdu or English.</p>");
+ else if(k==="help")say("bot",P(u,"Main leads dhoondna, emails nikalna, score dena, pitch likhna, dry-run aur download kar sakta hu. Sab kuch ek saath ke liye “sab chalao” likhein.","I can find leads, find emails, score them, write a pitch, do a dry-run and download good leads. Say “run everything” to do it all."));
+ else say("bot",P(u,"Yeh mujhe samajh nahi aaya. Is tarah likhein: “leads dhoondo”, “emails dhoondo”, “pitch likho”, “download karo” ya “sab chalao”.","I didn’t get that. Try “find leads”, “find emails”, “write a pitch”, “download” or “run everything”."));
+ }finally{busy=false}
+}
+$("#chips").innerHTML=["leads dhoondo","find emails","pitch likho","sab chalao","download karo"].map(c=>`<button>${c}</button>`).join("");
+$("#chips").onclick=e=>{if(e.target.tagName==="BUTTON")handle(e.target.textContent)};
+$("#go").onclick=()=>handle($("#in").value);$("#in").onkeydown=e=>{if(e.key==="Enter")handle($("#in").value)};
+say("bot","<p>Assalam-o-Alaikum! Main leads dhoondta, emails nikalta, score deta aur pitch likhta hu. Roman Urdu ya English, jis mein chahein likhein. / Write in Roman Urdu or English.</p>");
+load().then(()=>{syncTiles();if(leads.length)say("bot",P(true,`Aapki ${leads.length} leads load ho gayi hain (${withMail()} ki email ke saath).`,`Loaded your ${leads.length} leads (${withMail()} with an email).`))})
+ .catch(()=>{render();say("bot","<p>Leads load nahi hui. Page ko <b>python3 desk.py</b> ke zariye kholein, file se seedha nahi.</p>")});
+</script>
+</body>
+</html>

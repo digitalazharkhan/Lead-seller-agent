@@ -7,6 +7,9 @@ import requests
 
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 HEADERS = {"User-Agent": "LeadSellerAgent/1.0 (educational project)"}
+OUTPUT_FILE = "leads_restaurant_lahore.json"
+CATEGORY = "restaurant"
+CITY = "Lahore"
 
 # Lahore ka box: (south, west, north, east)
 QUERY = """
@@ -45,6 +48,8 @@ def discover():
             continue
         leads.append({
             "name": name,
+            "category": CATEGORY,   # email_writer aur import_leads ko chahiye
+            "city": CITY,           # email_writer aur import_leads ko chahiye
             "website": website if website.startswith("http") else "https://" + website,
             "phone": tags.get("phone", tags.get("contact:phone", "")),
             "address": tags.get("addr:street", ""),
@@ -57,7 +62,7 @@ def discover():
 
     print(f"✅ {len(leads)} restaurants mili jinke paas website hai!")
 
-    with open("leads_restaurant_lahore.json", "w", encoding="utf-8") as file:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
         json.dump(leads, file, indent=2, ensure_ascii=False)
 
     for lead in leads[:10]:
