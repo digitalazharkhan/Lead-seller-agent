@@ -12,3 +12,5 @@ unsubscribed.txtsent_log.json
 unsubscribed.txt
 backup_leads.json
 backup_leads.json
+.env*
+*.tsbuildinfo
