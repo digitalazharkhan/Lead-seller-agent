@@ -1,0 +1,3104 @@
+{
+  "generatedAt": "2026-11-07T03:55:35.093Z",
+  "processing": {
+    "targetPoseHeight": 96,
+    "originalFilesPreserved": true,
+    "notes": [
+      "Pose frames are trimmed connected components, not reconstructed uniform sprite atlases.",
+      "96px normalization preserves aspect ratio; source artwork is not converted into pixel art.",
+      "Review contact sheets for background-removal artifacts, merged figures, and non-character components."
+    ]
+  },
+  "characters": {
+    "azhar": {
+      "source": "characters/azhar.png",
+      "sourceSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "backgroundRemoval": {
+        "details": "Removed border-connected dark backdrop using local RGB tolerance (seed max <= 76; neighboring pixel distance <= 22, max channel <= 180).",
+        "removedPixels": 984980
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 36
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "azhar/azhar-01.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 372,
+            "top": 69,
+            "width": 83,
+            "height": 155,
+            "pixelArea": 9114
+          }
+        },
+        {
+          "index": 2,
+          "file": "azhar/azhar-02.png",
+          "width": 68,
+          "height": 96,
+          "sourceBounds": {
+            "left": 729,
+            "top": 69,
+            "width": 76,
+            "height": 108,
+            "pixelArea": 2732
+          }
+        },
+        {
+          "index": 3,
+          "file": "azhar/azhar-03.png",
+          "width": 50,
+          "height": 96,
+          "sourceBounds": {
+            "left": 898,
+            "top": 70,
+            "width": 80,
+            "height": 154,
+            "pixelArea": 8147
+          }
+        },
+        {
+          "index": 4,
+          "file": "azhar/azhar-04.png",
+          "width": 102,
+          "height": 96,
+          "sourceBounds": {
+            "left": 107,
+            "top": 101,
+            "width": 143,
+            "height": 135,
+            "pixelArea": 8987
+          }
+        },
+        {
+          "index": 5,
+          "file": "azhar/azhar-05.png",
+          "width": 28,
+          "height": 96,
+          "sourceBounds": {
+            "left": 207,
+            "top": 147,
+            "width": 77,
+            "height": 260,
+            "pixelArea": 8691
+          }
+        },
+        {
+          "index": 6,
+          "file": "azhar/azhar-06.png",
+          "width": 33,
+          "height": 96,
+          "sourceBounds": {
+            "left": 47,
+            "top": 156,
+            "width": 99,
+            "height": 290,
+            "pixelArea": 11161
+          }
+        },
+        {
+          "index": 7,
+          "file": "azhar/azhar-07.png",
+          "width": 55,
+          "height": 96,
+          "sourceBounds": {
+            "left": 79,
+            "top": 233,
+            "width": 70,
+            "height": 123,
+            "pixelArea": 4836
+          }
+        },
+        {
+          "index": 8,
+          "file": "azhar/azhar-08.png",
+          "width": 46,
+          "height": 96,
+          "sourceBounds": {
+            "left": 377,
+            "top": 294,
+            "width": 75,
+            "height": 155,
+            "pixelArea": 6284
+          }
+        },
+        {
+          "index": 9,
+          "file": "azhar/azhar-09.png",
+          "width": 65,
+          "height": 96,
+          "sourceBounds": {
+            "left": 552,
+            "top": 295,
+            "width": 77,
+            "height": 113,
+            "pixelArea": 3728
+          }
+        },
+        {
+          "index": 10,
+          "file": "azhar/azhar-10.png",
+          "width": 59,
+          "height": 96,
+          "sourceBounds": {
+            "left": 731,
+            "top": 295,
+            "width": 68,
+            "height": 111,
+            "pixelArea": 3500
+          }
+        },
+        {
+          "index": 11,
+          "file": "azhar/azhar-11.png",
+          "width": 62,
+          "height": 96,
+          "sourceBounds": {
+            "left": 902,
+            "top": 298,
+            "width": 71,
+            "height": 110,
+            "pixelArea": 2511
+          }
+        },
+        {
+          "index": 12,
+          "file": "azhar/azhar-12.png",
+          "width": 115,
+          "height": 96,
+          "sourceBounds": {
+            "left": 551,
+            "top": 559,
+            "width": 80,
+            "height": 67,
+            "pixelArea": 3798
+          }
+        },
+        {
+          "index": 13,
+          "file": "azhar/azhar-13.png",
+          "width": 117,
+          "height": 96,
+          "sourceBounds": {
+            "left": 375,
+            "top": 561,
+            "width": 78,
+            "height": 64,
+            "pixelArea": 1858
+          }
+        },
+        {
+          "index": 14,
+          "file": "azhar/azhar-14.png",
+          "width": 88,
+          "height": 96,
+          "sourceBounds": {
+            "left": 75,
+            "top": 765,
+            "width": 134,
+            "height": 146,
+            "pixelArea": 8316
+          }
+        },
+        {
+          "index": 15,
+          "file": "azhar/azhar-15.png",
+          "width": 98,
+          "height": 96,
+          "sourceBounds": {
+            "left": 308,
+            "top": 768,
+            "width": 99,
+            "height": 97,
+            "pixelArea": 4903
+          }
+        },
+        {
+          "index": 16,
+          "file": "azhar/azhar-16.png",
+          "width": 93,
+          "height": 96,
+          "sourceBounds": {
+            "left": 890,
+            "top": 771,
+            "width": 98,
+            "height": 101,
+            "pixelArea": 4862
+          }
+        },
+        {
+          "index": 17,
+          "file": "azhar/azhar-17.png",
+          "width": 74,
+          "height": 96,
+          "sourceBounds": {
+            "left": 711,
+            "top": 772,
+            "width": 78,
+            "height": 101,
+            "pixelArea": 4600
+          }
+        },
+        {
+          "index": 18,
+          "file": "azhar/azhar-18.png",
+          "width": 110,
+          "height": 96,
+          "sourceBounds": {
+            "left": 513,
+            "top": 775,
+            "width": 110,
+            "height": 96,
+            "pixelArea": 4834
+          }
+        },
+        {
+          "index": 19,
+          "file": "azhar/azhar-19.png",
+          "width": 99,
+          "height": 96,
+          "sourceBounds": {
+            "left": 869,
+            "top": 997,
+            "width": 100,
+            "height": 97,
+            "pixelArea": 4413
+          }
+        },
+        {
+          "index": 20,
+          "file": "azhar/azhar-20.png",
+          "width": 99,
+          "height": 96,
+          "sourceBounds": {
+            "left": 99,
+            "top": 1004,
+            "width": 92,
+            "height": 89,
+            "pixelArea": 4685
+          }
+        },
+        {
+          "index": 21,
+          "file": "azhar/azhar-21.png",
+          "width": 68,
+          "height": 96,
+          "sourceBounds": {
+            "left": 666,
+            "top": 1004,
+            "width": 113,
+            "height": 160,
+            "pixelArea": 9692
+          }
+        },
+        {
+          "index": 22,
+          "file": "azhar/azhar-22.png",
+          "width": 117,
+          "height": 96,
+          "sourceBounds": {
+            "left": 279,
+            "top": 1007,
+            "width": 105,
+            "height": 86,
+            "pixelArea": 4488
+          }
+        },
+        {
+          "index": 23,
+          "file": "azhar/azhar-23.png",
+          "width": 73,
+          "height": 96,
+          "sourceBounds": {
+            "left": 460,
+            "top": 1009,
+            "width": 109,
+            "height": 144,
+            "pixelArea": 7482
+          }
+        },
+        {
+          "index": 24,
+          "file": "azhar/azhar-24.png",
+          "width": 55,
+          "height": 96,
+          "sourceBounds": {
+            "left": 49,
+            "top": 1034,
+            "width": 67,
+            "height": 116,
+            "pixelArea": 3361
+          }
+        },
+        {
+          "index": 25,
+          "file": "azhar/azhar-25.png",
+          "width": 119,
+          "height": 96,
+          "sourceBounds": {
+            "left": 284,
+            "top": 1073,
+            "width": 94,
+            "height": 76,
+            "pixelArea": 3816
+          }
+        },
+        {
+          "index": 26,
+          "file": "azhar/azhar-26.png",
+          "width": 112,
+          "height": 96,
+          "sourceBounds": {
+            "left": 868,
+            "top": 1079,
+            "width": 78,
+            "height": 67,
+            "pixelArea": 1291
+          }
+        },
+        {
+          "index": 27,
+          "file": "azhar/azhar-27.png",
+          "width": 74,
+          "height": 96,
+          "sourceBounds": {
+            "left": 929,
+            "top": 1080,
+            "width": 64,
+            "height": 83,
+            "pixelArea": 1864
+          }
+        },
+        {
+          "index": 28,
+          "file": "azhar/azhar-28.png",
+          "width": 108,
+          "height": 96,
+          "sourceBounds": {
+            "left": 65,
+            "top": 1263,
+            "width": 117,
+            "height": 104,
+            "pixelArea": 6209
+          }
+        },
+        {
+          "index": 29,
+          "file": "azhar/azhar-29.png",
+          "width": 125,
+          "height": 96,
+          "sourceBounds": {
+            "left": 261,
+            "top": 1268,
+            "width": 128,
+            "height": 98,
+            "pixelArea": 5413
+          }
+        },
+        {
+          "index": 30,
+          "file": "azhar/azhar-30.png",
+          "width": 111,
+          "height": 96,
+          "sourceBounds": {
+            "left": 475,
+            "top": 1270,
+            "width": 111,
+            "height": 96,
+            "pixelArea": 3605
+          }
+        },
+        {
+          "index": 31,
+          "file": "azhar/azhar-31.png",
+          "width": 138,
+          "height": 96,
+          "sourceBounds": {
+            "left": 872,
+            "top": 1278,
+            "width": 96,
+            "height": 67,
+            "pixelArea": 3617
+          }
+        },
+        {
+          "index": 32,
+          "file": "azhar/azhar-32.png",
+          "width": 87,
+          "height": 96,
+          "sourceBounds": {
+            "left": 670,
+            "top": 1285,
+            "width": 109,
+            "height": 120,
+            "pixelArea": 6568
+          }
+        },
+        {
+          "index": 33,
+          "file": "azhar/azhar-33.png",
+          "width": 175,
+          "height": 96,
+          "sourceBounds": {
+            "left": 864,
+            "top": 1340,
+            "width": 135,
+            "height": 74,
+            "pixelArea": 4329
+          }
+        },
+        {
+          "index": 34,
+          "file": "azhar/azhar-34.png",
+          "width": 42,
+          "height": 96,
+          "sourceBounds": {
+            "left": 478,
+            "top": 1346,
+            "width": 47,
+            "height": 108,
+            "pixelArea": 2197
+          }
+        },
+        {
+          "index": 35,
+          "file": "azhar/azhar-35.png",
+          "width": 100,
+          "height": 96,
+          "sourceBounds": {
+            "left": 89,
+            "top": 1351,
+            "width": 99,
+            "height": 95,
+            "pixelArea": 2620
+          }
+        },
+        {
+          "index": 36,
+          "file": "azhar/azhar-36.png",
+          "width": 62,
+          "height": 96,
+          "sourceBounds": {
+            "left": 75,
+            "top": 1369,
+            "width": 54,
+            "height": 83,
+            "pixelArea": 2052
+          }
+        }
+      ]
+    },
+    "khan": {
+      "source": "characters/khan.jpg",
+      "sourceSize": {
+        "width": 736,
+        "height": 1104
+      },
+      "backgroundRemoval": {
+        "details": "Removed border-connected neutral white/light-gray background and sheet grid pixels (RGB >= 200, chroma <= 28).",
+        "removedPixels": 386452
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 12
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "khan/khan-01.png",
+          "width": 82,
+          "height": 96,
+          "sourceBounds": {
+            "left": 31,
+            "top": 26,
+            "width": 214,
+            "height": 250,
+            "pixelArea": 37907
+          }
+        },
+        {
+          "index": 2,
+          "file": "khan/khan-02.png",
+          "width": 84,
+          "height": 96,
+          "sourceBounds": {
+            "left": 264,
+            "top": 28,
+            "width": 218,
+            "height": 249,
+            "pixelArea": 35365
+          }
+        },
+        {
+          "index": 3,
+          "file": "khan/khan-03.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 504,
+            "top": 28,
+            "width": 215,
+            "height": 248,
+            "pixelArea": 34780
+          }
+        },
+        {
+          "index": 4,
+          "file": "khan/khan-04.png",
+          "width": 79,
+          "height": 96,
+          "sourceBounds": {
+            "left": 513,
+            "top": 291,
+            "width": 209,
+            "height": 255,
+            "pixelArea": 33923
+          }
+        },
+        {
+          "index": 5,
+          "file": "khan/khan-05.png",
+          "width": 81,
+          "height": 96,
+          "sourceBounds": {
+            "left": 274,
+            "top": 294,
+            "width": 208,
+            "height": 248,
+            "pixelArea": 34361
+          }
+        },
+        {
+          "index": 6,
+          "file": "khan/khan-06.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 32,
+            "top": 296,
+            "width": 213,
+            "height": 246,
+            "pixelArea": 36182
+          }
+        },
+        {
+          "index": 7,
+          "file": "khan/khan-07.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 31,
+            "top": 557,
+            "width": 217,
+            "height": 252,
+            "pixelArea": 37498
+          }
+        },
+        {
+          "index": 8,
+          "file": "khan/khan-08.png",
+          "width": 78,
+          "height": 96,
+          "sourceBounds": {
+            "left": 507,
+            "top": 558,
+            "width": 206,
+            "height": 254,
+            "pixelArea": 33966
+          }
+        },
+        {
+          "index": 9,
+          "file": "khan/khan-09.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 271,
+            "top": 559,
+            "width": 216,
+            "height": 249,
+            "pixelArea": 35184
+          }
+        },
+        {
+          "index": 10,
+          "file": "khan/khan-10.png",
+          "width": 81,
+          "height": 96,
+          "sourceBounds": {
+            "left": 42,
+            "top": 824,
+            "width": 210,
+            "height": 249,
+            "pixelArea": 33952
+          }
+        },
+        {
+          "index": 11,
+          "file": "khan/khan-11.png",
+          "width": 80,
+          "height": 96,
+          "sourceBounds": {
+            "left": 276,
+            "top": 824,
+            "width": 205,
+            "height": 247,
+            "pixelArea": 35281
+          }
+        },
+        {
+          "index": 12,
+          "file": "khan/khan-12.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 506,
+            "top": 825,
+            "width": 214,
+            "height": 247,
+            "pixelArea": 36243
+          }
+        }
+      ]
+    },
+    "ali": {
+      "source": "characters/ali.jpg",
+      "sourceSize": {
+        "width": 1376,
+        "height": 768
+      },
+      "backgroundRemoval": {
+        "details": "Removed border-connected neutral checker pixels near RGB 127,127,127 and 187,187,187 (tolerance 24).",
+        "removedPixels": 622103
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes within 8x3 source cells",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 22,
+        "sourceGrid": {
+          "columns": 8,
+          "rows": 3,
+          "rowColumns": [
+            8,
+            8,
+            6
+          ],
+          "inset": 5
+        }
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "ali/ali-01.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 894,
+            "top": 5,
+            "width": 105,
+            "height": 246,
+            "pixelArea": 14231,
+            "gridCell": {
+              "column": 6,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 2,
+          "file": "ali/ali-02.png",
+          "width": 42,
+          "height": 96,
+          "sourceBounds": {
+            "left": 34,
+            "top": 13,
+            "width": 104,
+            "height": 238,
+            "pixelArea": 14609,
+            "gridCell": {
+              "column": 1,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 3,
+          "file": "ali/ali-03.png",
+          "width": 43,
+          "height": 96,
+          "sourceBounds": {
+            "left": 723,
+            "top": 20,
+            "width": 103,
+            "height": 231,
+            "pixelArea": 14286,
+            "gridCell": {
+              "column": 5,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 4,
+          "file": "ali/ali-04.png",
+          "width": 42,
+          "height": 96,
+          "sourceBounds": {
+            "left": 210,
+            "top": 21,
+            "width": 100,
+            "height": 230,
+            "pixelArea": 14624,
+            "gridCell": {
+              "column": 2,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 5,
+          "file": "ali/ali-05.png",
+          "width": 42,
+          "height": 96,
+          "sourceBounds": {
+            "left": 381,
+            "top": 21,
+            "width": 101,
+            "height": 229,
+            "pixelArea": 14675,
+            "gridCell": {
+              "column": 3,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 6,
+          "file": "ali/ali-06.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1066,
+            "top": 21,
+            "width": 98,
+            "height": 230,
+            "pixelArea": 13826,
+            "gridCell": {
+              "column": 7,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 7,
+          "file": "ali/ali-07.png",
+          "width": 43,
+          "height": 96,
+          "sourceBounds": {
+            "left": 553,
+            "top": 22,
+            "width": 100,
+            "height": 225,
+            "pixelArea": 14281,
+            "gridCell": {
+              "column": 4,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 8,
+          "file": "ali/ali-08.png",
+          "width": 44,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1236,
+            "top": 22,
+            "width": 104,
+            "height": 227,
+            "pixelArea": 12910,
+            "gridCell": {
+              "column": 8,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 9,
+          "file": "ali/ali-09.png",
+          "width": 42,
+          "height": 96,
+          "sourceBounds": {
+            "left": 379,
+            "top": 270,
+            "width": 103,
+            "height": 237,
+            "pixelArea": 14725,
+            "gridCell": {
+              "column": 3,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 10,
+          "file": "ali/ali-10.png",
+          "width": 42,
+          "height": 96,
+          "sourceBounds": {
+            "left": 550,
+            "top": 274,
+            "width": 103,
+            "height": 233,
+            "pixelArea": 14552,
+            "gridCell": {
+              "column": 4,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 11,
+          "file": "ali/ali-11.png",
+          "width": 44,
+          "height": 96,
+          "sourceBounds": {
+            "left": 211,
+            "top": 276,
+            "width": 107,
+            "height": 231,
+            "pixelArea": 14403,
+            "gridCell": {
+              "column": 2,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 12,
+          "file": "ali/ali-12.png",
+          "width": 47,
+          "height": 96,
+          "sourceBounds": {
+            "left": 711,
+            "top": 276,
+            "width": 114,
+            "height": 231,
+            "pixelArea": 14855,
+            "gridCell": {
+              "column": 5,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 13,
+          "file": "ali/ali-13.png",
+          "width": 40,
+          "height": 96,
+          "sourceBounds": {
+            "left": 897,
+            "top": 276,
+            "width": 96,
+            "height": 231,
+            "pixelArea": 14012,
+            "gridCell": {
+              "column": 6,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 14,
+          "file": "ali/ali-14.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 43,
+            "top": 277,
+            "width": 97,
+            "height": 229,
+            "pixelArea": 13836,
+            "gridCell": {
+              "column": 1,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 15,
+          "file": "ali/ali-15.png",
+          "width": 56,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1237,
+            "top": 277,
+            "width": 134,
+            "height": 230,
+            "pixelArea": 12513,
+            "gridCell": {
+              "column": 8,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 16,
+          "file": "ali/ali-16.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1068,
+            "top": 278,
+            "width": 98,
+            "height": 229,
+            "pixelArea": 11683,
+            "gridCell": {
+              "column": 7,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 17,
+          "file": "ali/ali-17.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 55,
+            "top": 533,
+            "width": 123,
+            "height": 230,
+            "pixelArea": 16851,
+            "gridCell": {
+              "column": 1,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 18,
+          "file": "ali/ali-18.png",
+          "width": 53,
+          "height": 96,
+          "sourceBounds": {
+            "left": 748,
+            "top": 535,
+            "width": 125,
+            "height": 228,
+            "pixelArea": 17322,
+            "gridCell": {
+              "column": 4,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 19,
+          "file": "ali/ali-19.png",
+          "width": 55,
+          "height": 96,
+          "sourceBounds": {
+            "left": 284,
+            "top": 538,
+            "width": 129,
+            "height": 225,
+            "pixelArea": 16736,
+            "gridCell": {
+              "column": 2,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 20,
+          "file": "ali/ali-20.png",
+          "width": 55,
+          "height": 96,
+          "sourceBounds": {
+            "left": 513,
+            "top": 538,
+            "width": 129,
+            "height": 225,
+            "pixelArea": 17252,
+            "gridCell": {
+              "column": 3,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 21,
+          "file": "ali/ali-21.png",
+          "width": 55,
+          "height": 96,
+          "sourceBounds": {
+            "left": 974,
+            "top": 538,
+            "width": 128,
+            "height": 225,
+            "pixelArea": 17363,
+            "gridCell": {
+              "column": 5,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 22,
+          "file": "ali/ali-22.png",
+          "width": 54,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1205,
+            "top": 539,
+            "width": 127,
+            "height": 224,
+            "pixelArea": 17131,
+            "gridCell": {
+              "column": 6,
+              "row": 3
+            }
+          }
+        }
+      ]
+    },
+    "ayesha": {
+      "source": "characters/Ayesha.png",
+      "sourceSize": {
+        "width": 1199,
+        "height": 1312
+      },
+      "backgroundRemoval": {
+        "details": "Retained source alpha channel."
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 30
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "ayesha/ayesha-01.png",
+          "width": 47,
+          "height": 96,
+          "sourceBounds": {
+            "left": 52,
+            "top": 12,
+            "width": 123,
+            "height": 251,
+            "pixelArea": 23417
+          }
+        },
+        {
+          "index": 2,
+          "file": "ayesha/ayesha-02.png",
+          "width": 48,
+          "height": 96,
+          "sourceBounds": {
+            "left": 242,
+            "top": 12,
+            "width": 125,
+            "height": 251,
+            "pixelArea": 23552
+          }
+        },
+        {
+          "index": 3,
+          "file": "ayesha/ayesha-03.png",
+          "width": 47,
+          "height": 96,
+          "sourceBounds": {
+            "left": 433,
+            "top": 12,
+            "width": 124,
+            "height": 251,
+            "pixelArea": 23475
+          }
+        },
+        {
+          "index": 4,
+          "file": "ayesha/ayesha-04.png",
+          "width": 47,
+          "height": 96,
+          "sourceBounds": {
+            "left": 629,
+            "top": 12,
+            "width": 124,
+            "height": 253,
+            "pixelArea": 23142
+          }
+        },
+        {
+          "index": 5,
+          "file": "ayesha/ayesha-05.png",
+          "width": 46,
+          "height": 96,
+          "sourceBounds": {
+            "left": 819,
+            "top": 12,
+            "width": 121,
+            "height": 253,
+            "pixelArea": 21999
+          }
+        },
+        {
+          "index": 6,
+          "file": "ayesha/ayesha-06.png",
+          "width": 46,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1009,
+            "top": 12,
+            "width": 123,
+            "height": 255,
+            "pixelArea": 22327
+          }
+        },
+        {
+          "index": 7,
+          "file": "ayesha/ayesha-07.png",
+          "width": 53,
+          "height": 96,
+          "sourceBounds": {
+            "left": 61,
+            "top": 282,
+            "width": 134,
+            "height": 243,
+            "pixelArea": 21544
+          }
+        },
+        {
+          "index": 8,
+          "file": "ayesha/ayesha-08.png",
+          "width": 48,
+          "height": 96,
+          "sourceBounds": {
+            "left": 248,
+            "top": 282,
+            "width": 122,
+            "height": 245,
+            "pixelArea": 21024
+          }
+        },
+        {
+          "index": 9,
+          "file": "ayesha/ayesha-09.png",
+          "width": 49,
+          "height": 96,
+          "sourceBounds": {
+            "left": 433,
+            "top": 282,
+            "width": 123,
+            "height": 241,
+            "pixelArea": 21063
+          }
+        },
+        {
+          "index": 10,
+          "file": "ayesha/ayesha-10.png",
+          "width": 53,
+          "height": 96,
+          "sourceBounds": {
+            "left": 618,
+            "top": 283,
+            "width": 134,
+            "height": 242,
+            "pixelArea": 20800
+          }
+        },
+        {
+          "index": 11,
+          "file": "ayesha/ayesha-11.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 816,
+            "top": 285,
+            "width": 128,
+            "height": 241,
+            "pixelArea": 21256
+          }
+        },
+        {
+          "index": 12,
+          "file": "ayesha/ayesha-12.png",
+          "width": 49,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1010,
+            "top": 285,
+            "width": 126,
+            "height": 246,
+            "pixelArea": 21100
+          }
+        },
+        {
+          "index": 13,
+          "file": "ayesha/ayesha-13.png",
+          "width": 74,
+          "height": 96,
+          "sourceBounds": {
+            "left": 429,
+            "top": 544,
+            "width": 178,
+            "height": 230,
+            "pixelArea": 30135
+          }
+        },
+        {
+          "index": 14,
+          "file": "ayesha/ayesha-14.png",
+          "width": 71,
+          "height": 96,
+          "sourceBounds": {
+            "left": 36,
+            "top": 545,
+            "width": 167,
+            "height": 227,
+            "pixelArea": 28837
+          }
+        },
+        {
+          "index": 15,
+          "file": "ayesha/ayesha-15.png",
+          "width": 59,
+          "height": 96,
+          "sourceBounds": {
+            "left": 250,
+            "top": 545,
+            "width": 141,
+            "height": 228,
+            "pixelArea": 27004
+          }
+        },
+        {
+          "index": 16,
+          "file": "ayesha/ayesha-16.png",
+          "width": 66,
+          "height": 96,
+          "sourceBounds": {
+            "left": 822,
+            "top": 545,
+            "width": 155,
+            "height": 227,
+            "pixelArea": 27278
+          }
+        },
+        {
+          "index": 17,
+          "file": "ayesha/ayesha-17.png",
+          "width": 74,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1002,
+            "top": 545,
+            "width": 176,
+            "height": 229,
+            "pixelArea": 30663
+          }
+        },
+        {
+          "index": 18,
+          "file": "ayesha/ayesha-18.png",
+          "width": 73,
+          "height": 96,
+          "sourceBounds": {
+            "left": 625,
+            "top": 546,
+            "width": 172,
+            "height": 227,
+            "pixelArea": 29866
+          }
+        },
+        {
+          "index": 19,
+          "file": "ayesha/ayesha-19.png",
+          "width": 69,
+          "height": 96,
+          "sourceBounds": {
+            "left": 634,
+            "top": 799,
+            "width": 151,
+            "height": 209,
+            "pixelArea": 23727
+          }
+        },
+        {
+          "index": 20,
+          "file": "ayesha/ayesha-20.png",
+          "width": 80,
+          "height": 96,
+          "sourceBounds": {
+            "left": 34,
+            "top": 800,
+            "width": 172,
+            "height": 206,
+            "pixelArea": 26115
+          }
+        },
+        {
+          "index": 21,
+          "file": "ayesha/ayesha-21.png",
+          "width": 75,
+          "height": 96,
+          "sourceBounds": {
+            "left": 428,
+            "top": 801,
+            "width": 160,
+            "height": 206,
+            "pixelArea": 23818
+          }
+        },
+        {
+          "index": 22,
+          "file": "ayesha/ayesha-22.png",
+          "width": 68,
+          "height": 96,
+          "sourceBounds": {
+            "left": 822,
+            "top": 801,
+            "width": 144,
+            "height": 202,
+            "pixelArea": 23045
+          }
+        },
+        {
+          "index": 23,
+          "file": "ayesha/ayesha-23.png",
+          "width": 70,
+          "height": 96,
+          "sourceBounds": {
+            "left": 248,
+            "top": 802,
+            "width": 150,
+            "height": 205,
+            "pixelArea": 23991
+          }
+        },
+        {
+          "index": 24,
+          "file": "ayesha/ayesha-24.png",
+          "width": 73,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1002,
+            "top": 803,
+            "width": 155,
+            "height": 204,
+            "pixelArea": 24981
+          }
+        },
+        {
+          "index": 25,
+          "file": "ayesha/ayesha-25.png",
+          "width": 56,
+          "height": 96,
+          "sourceBounds": {
+            "left": 35,
+            "top": 1016,
+            "width": 167,
+            "height": 284,
+            "pixelArea": 32301
+          }
+        },
+        {
+          "index": 26,
+          "file": "ayesha/ayesha-26.png",
+          "width": 54,
+          "height": 96,
+          "sourceBounds": {
+            "left": 817,
+            "top": 1019,
+            "width": 159,
+            "height": 282,
+            "pixelArea": 32889
+          }
+        },
+        {
+          "index": 27,
+          "file": "ayesha/ayesha-27.png",
+          "width": 50,
+          "height": 96,
+          "sourceBounds": {
+            "left": 626,
+            "top": 1022,
+            "width": 145,
+            "height": 278,
+            "pixelArea": 30612
+          }
+        },
+        {
+          "index": 28,
+          "file": "ayesha/ayesha-28.png",
+          "width": 53,
+          "height": 96,
+          "sourceBounds": {
+            "left": 242,
+            "top": 1023,
+            "width": 153,
+            "height": 277,
+            "pixelArea": 32445
+          }
+        },
+        {
+          "index": 29,
+          "file": "ayesha/ayesha-29.png",
+          "width": 59,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1012,
+            "top": 1023,
+            "width": 170,
+            "height": 277,
+            "pixelArea": 33351
+          }
+        },
+        {
+          "index": 30,
+          "file": "ayesha/ayesha-30.png",
+          "width": 58,
+          "height": 96,
+          "sourceBounds": {
+            "left": 434,
+            "top": 1025,
+            "width": 165,
+            "height": 275,
+            "pixelArea": 31271
+          }
+        }
+      ]
+    },
+    "hassan": {
+      "source": "characters/hassan.jpg",
+      "sourceSize": {
+        "width": 1376,
+        "height": 768
+      },
+      "backgroundRemoval": {
+        "details": "Removed border-connected neutral checker pixels near RGB 126,126,126 and 184,184,184 (tolerance 24).",
+        "removedPixels": 648015
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes within 8x3 source cells",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 22,
+        "sourceGrid": {
+          "columns": 8,
+          "rows": 3,
+          "rowColumns": [
+            8,
+            8,
+            6
+          ],
+          "inset": 5
+        }
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "hassan/hassan-01.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 40,
+            "top": 20,
+            "width": 98,
+            "height": 231,
+            "pixelArea": 14492,
+            "gridCell": {
+              "column": 1,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 2,
+          "file": "hassan/hassan-02.png",
+          "width": 40,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1069,
+            "top": 21,
+            "width": 95,
+            "height": 230,
+            "pixelArea": 13463,
+            "gridCell": {
+              "column": 7,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 3,
+          "file": "hassan/hassan-03.png",
+          "width": 40,
+          "height": 96,
+          "sourceBounds": {
+            "left": 384,
+            "top": 22,
+            "width": 95,
+            "height": 228,
+            "pixelArea": 14413,
+            "gridCell": {
+              "column": 3,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 4,
+          "file": "hassan/hassan-04.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 556,
+            "top": 22,
+            "width": 97,
+            "height": 227,
+            "pixelArea": 14113,
+            "gridCell": {
+              "column": 4,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 5,
+          "file": "hassan/hassan-05.png",
+          "width": 44,
+          "height": 96,
+          "sourceBounds": {
+            "left": 720,
+            "top": 22,
+            "width": 104,
+            "height": 229,
+            "pixelArea": 14227,
+            "gridCell": {
+              "column": 5,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 6,
+          "file": "hassan/hassan-06.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 895,
+            "top": 22,
+            "width": 97,
+            "height": 229,
+            "pixelArea": 13437,
+            "gridCell": {
+              "column": 6,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 7,
+          "file": "hassan/hassan-07.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 212,
+            "top": 23,
+            "width": 97,
+            "height": 228,
+            "pixelArea": 14412,
+            "gridCell": {
+              "column": 2,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 8,
+          "file": "hassan/hassan-08.png",
+          "width": 44,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1236,
+            "top": 23,
+            "width": 104,
+            "height": 226,
+            "pixelArea": 12454,
+            "gridCell": {
+              "column": 8,
+              "row": 1
+            }
+          }
+        },
+        {
+          "index": 9,
+          "file": "hassan/hassan-09.png",
+          "width": 38,
+          "height": 96,
+          "sourceBounds": {
+            "left": 212,
+            "top": 261,
+            "width": 98,
+            "height": 246,
+            "pixelArea": 14108,
+            "gridCell": {
+              "column": 2,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 10,
+          "file": "hassan/hassan-10.png",
+          "width": 42,
+          "height": 96,
+          "sourceBounds": {
+            "left": 381,
+            "top": 276,
+            "width": 101,
+            "height": 231,
+            "pixelArea": 14203,
+            "gridCell": {
+              "column": 3,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 11,
+          "file": "hassan/hassan-11.png",
+          "width": 40,
+          "height": 96,
+          "sourceBounds": {
+            "left": 43,
+            "top": 277,
+            "width": 95,
+            "height": 228,
+            "pixelArea": 13540,
+            "gridCell": {
+              "column": 1,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 12,
+          "file": "hassan/hassan-12.png",
+          "width": 48,
+          "height": 96,
+          "sourceBounds": {
+            "left": 550,
+            "top": 277,
+            "width": 116,
+            "height": 230,
+            "pixelArea": 14312,
+            "gridCell": {
+              "column": 4,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 13,
+          "file": "hassan/hassan-13.png",
+          "width": 45,
+          "height": 96,
+          "sourceBounds": {
+            "left": 711,
+            "top": 277,
+            "width": 109,
+            "height": 230,
+            "pixelArea": 14325,
+            "gridCell": {
+              "column": 5,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 14,
+          "file": "hassan/hassan-14.png",
+          "width": 38,
+          "height": 96,
+          "sourceBounds": {
+            "left": 899,
+            "top": 277,
+            "width": 92,
+            "height": 230,
+            "pixelArea": 13741,
+            "gridCell": {
+              "column": 6,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 15,
+          "file": "hassan/hassan-15.png",
+          "width": 41,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1068,
+            "top": 278,
+            "width": 98,
+            "height": 229,
+            "pixelArea": 11383,
+            "gridCell": {
+              "column": 7,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 16,
+          "file": "hassan/hassan-16.png",
+          "width": 43,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1237,
+            "top": 278,
+            "width": 103,
+            "height": 228,
+            "pixelArea": 12122,
+            "gridCell": {
+              "column": 8,
+              "row": 2
+            }
+          }
+        },
+        {
+          "index": 17,
+          "file": "hassan/hassan-17.png",
+          "width": 45,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1205,
+            "top": 525,
+            "width": 112,
+            "height": 238,
+            "pixelArea": 13826,
+            "gridCell": {
+              "column": 6,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 18,
+          "file": "hassan/hassan-18.png",
+          "width": 48,
+          "height": 96,
+          "sourceBounds": {
+            "left": 55,
+            "top": 533,
+            "width": 114,
+            "height": 230,
+            "pixelArea": 14431,
+            "gridCell": {
+              "column": 1,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 19,
+          "file": "hassan/hassan-19.png",
+          "width": 46,
+          "height": 96,
+          "sourceBounds": {
+            "left": 748,
+            "top": 533,
+            "width": 110,
+            "height": 230,
+            "pixelArea": 13922,
+            "gridCell": {
+              "column": 4,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 20,
+          "file": "hassan/hassan-20.png",
+          "width": 58,
+          "height": 96,
+          "sourceBounds": {
+            "left": 505,
+            "top": 538,
+            "width": 135,
+            "height": 225,
+            "pixelArea": 14248,
+            "gridCell": {
+              "column": 3,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 21,
+          "file": "hassan/hassan-21.png",
+          "width": 48,
+          "height": 96,
+          "sourceBounds": {
+            "left": 974,
+            "top": 538,
+            "width": 112,
+            "height": 225,
+            "pixelArea": 13981,
+            "gridCell": {
+              "column": 5,
+              "row": 3
+            }
+          }
+        },
+        {
+          "index": 22,
+          "file": "hassan/hassan-22.png",
+          "width": 55,
+          "height": 96,
+          "sourceBounds": {
+            "left": 284,
+            "top": 539,
+            "width": 129,
+            "height": 224,
+            "pixelArea": 13684,
+            "gridCell": {
+              "column": 2,
+              "row": 3
+            }
+          }
+        }
+      ]
+    },
+    "sara": {
+      "source": "characters/Sara.png",
+      "sourceSize": {
+        "width": 1199,
+        "height": 1312
+      },
+      "backgroundRemoval": {
+        "details": "Retained source alpha channel."
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 30
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "sara/sara-01.png",
+          "width": 57,
+          "height": 96,
+          "sourceBounds": {
+            "left": 259,
+            "top": 4,
+            "width": 152,
+            "height": 255,
+            "pixelArea": 26701
+          }
+        },
+        {
+          "index": 2,
+          "file": "sara/sara-02.png",
+          "width": 57,
+          "height": 96,
+          "sourceBounds": {
+            "left": 466,
+            "top": 4,
+            "width": 151,
+            "height": 255,
+            "pixelArea": 26646
+          }
+        },
+        {
+          "index": 3,
+          "file": "sara/sara-03.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 675,
+            "top": 4,
+            "width": 136,
+            "height": 255,
+            "pixelArea": 24239
+          }
+        },
+        {
+          "index": 4,
+          "file": "sara/sara-04.png",
+          "width": 58,
+          "height": 96,
+          "sourceBounds": {
+            "left": 54,
+            "top": 5,
+            "width": 154,
+            "height": 254,
+            "pixelArea": 27086
+          }
+        },
+        {
+          "index": 5,
+          "file": "sara/sara-05.png",
+          "width": 52,
+          "height": 96,
+          "sourceBounds": {
+            "left": 869,
+            "top": 6,
+            "width": 138,
+            "height": 254,
+            "pixelArea": 23819
+          }
+        },
+        {
+          "index": 6,
+          "file": "sara/sara-06.png",
+          "width": 50,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1048,
+            "top": 6,
+            "width": 131,
+            "height": 253,
+            "pixelArea": 23796
+          }
+        },
+        {
+          "index": 7,
+          "file": "sara/sara-07.png",
+          "width": 59,
+          "height": 96,
+          "sourceBounds": {
+            "left": 35,
+            "top": 274,
+            "width": 157,
+            "height": 255,
+            "pixelArea": 23898
+          }
+        },
+        {
+          "index": 8,
+          "file": "sara/sara-08.png",
+          "width": 56,
+          "height": 96,
+          "sourceBounds": {
+            "left": 459,
+            "top": 275,
+            "width": 148,
+            "height": 255,
+            "pixelArea": 24206
+          }
+        },
+        {
+          "index": 9,
+          "file": "sara/sara-09.png",
+          "width": 60,
+          "height": 96,
+          "sourceBounds": {
+            "left": 239,
+            "top": 276,
+            "width": 158,
+            "height": 253,
+            "pixelArea": 24988
+          }
+        },
+        {
+          "index": 10,
+          "file": "sara/sara-10.png",
+          "width": 57,
+          "height": 96,
+          "sourceBounds": {
+            "left": 661,
+            "top": 279,
+            "width": 149,
+            "height": 252,
+            "pixelArea": 23851
+          }
+        },
+        {
+          "index": 11,
+          "file": "sara/sara-11.png",
+          "width": 58,
+          "height": 96,
+          "sourceBounds": {
+            "left": 861,
+            "top": 279,
+            "width": 154,
+            "height": 253,
+            "pixelArea": 24038
+          }
+        },
+        {
+          "index": 12,
+          "file": "sara/sara-12.png",
+          "width": 47,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1051,
+            "top": 280,
+            "width": 124,
+            "height": 252,
+            "pixelArea": 22503
+          }
+        },
+        {
+          "index": 13,
+          "file": "sara/sara-13.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 21,
+            "top": 547,
+            "width": 197,
+            "height": 228,
+            "pixelArea": 32009
+          }
+        },
+        {
+          "index": 14,
+          "file": "sara/sara-14.png",
+          "width": 69,
+          "height": 96,
+          "sourceBounds": {
+            "left": 449,
+            "top": 547,
+            "width": 166,
+            "height": 230,
+            "pixelArea": 29452
+          }
+        },
+        {
+          "index": 15,
+          "file": "sara/sara-15.png",
+          "width": 75,
+          "height": 96,
+          "sourceBounds": {
+            "left": 241,
+            "top": 548,
+            "width": 180,
+            "height": 229,
+            "pixelArea": 31257
+          }
+        },
+        {
+          "index": 16,
+          "file": "sara/sara-16.png",
+          "width": 77,
+          "height": 96,
+          "sourceBounds": {
+            "left": 644,
+            "top": 550,
+            "width": 181,
+            "height": 227,
+            "pixelArea": 31016
+          }
+        },
+        {
+          "index": 17,
+          "file": "sara/sara-17.png",
+          "width": 76,
+          "height": 96,
+          "sourceBounds": {
+            "left": 843,
+            "top": 551,
+            "width": 174,
+            "height": 219,
+            "pixelArea": 29006
+          }
+        },
+        {
+          "index": 18,
+          "file": "sara/sara-18.png",
+          "width": 69,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1035,
+            "top": 554,
+            "width": 157,
+            "height": 220,
+            "pixelArea": 25505
+          }
+        },
+        {
+          "index": 19,
+          "file": "sara/sara-19.png",
+          "width": 87,
+          "height": 96,
+          "sourceBounds": {
+            "left": 13,
+            "top": 785,
+            "width": 196,
+            "height": 216,
+            "pixelArea": 32283
+          }
+        },
+        {
+          "index": 20,
+          "file": "sara/sara-20.png",
+          "width": 85,
+          "height": 96,
+          "sourceBounds": {
+            "left": 225,
+            "top": 790,
+            "width": 186,
+            "height": 211,
+            "pixelArea": 31186
+          }
+        },
+        {
+          "index": 21,
+          "file": "sara/sara-21.png",
+          "width": 79,
+          "height": 96,
+          "sourceBounds": {
+            "left": 424,
+            "top": 790,
+            "width": 175,
+            "height": 212,
+            "pixelArea": 29173
+          }
+        },
+        {
+          "index": 22,
+          "file": "sara/sara-22.png",
+          "width": 84,
+          "height": 96,
+          "sourceBounds": {
+            "left": 629,
+            "top": 790,
+            "width": 184,
+            "height": 211,
+            "pixelArea": 30728
+          }
+        },
+        {
+          "index": 23,
+          "file": "sara/sara-23.png",
+          "width": 81,
+          "height": 96,
+          "sourceBounds": {
+            "left": 826,
+            "top": 793,
+            "width": 175,
+            "height": 208,
+            "pixelArea": 28428
+          }
+        },
+        {
+          "index": 24,
+          "file": "sara/sara-24.png",
+          "width": 78,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1025,
+            "top": 798,
+            "width": 165,
+            "height": 204,
+            "pixelArea": 27121
+          }
+        },
+        {
+          "index": 25,
+          "file": "sara/sara-25.png",
+          "width": 68,
+          "height": 96,
+          "sourceBounds": {
+            "left": 15,
+            "top": 1015,
+            "width": 209,
+            "height": 297,
+            "pixelArea": 39971
+          }
+        },
+        {
+          "index": 26,
+          "file": "sara/sara-26.png",
+          "width": 62,
+          "height": 96,
+          "sourceBounds": {
+            "left": 229,
+            "top": 1018,
+            "width": 190,
+            "height": 294,
+            "pixelArea": 38820
+          }
+        },
+        {
+          "index": 27,
+          "file": "sara/sara-27.png",
+          "width": 57,
+          "height": 96,
+          "sourceBounds": {
+            "left": 827,
+            "top": 1019,
+            "width": 172,
+            "height": 291,
+            "pixelArea": 33710
+          }
+        },
+        {
+          "index": 28,
+          "file": "sara/sara-28.png",
+          "width": 60,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1013,
+            "top": 1020,
+            "width": 180,
+            "height": 290,
+            "pixelArea": 36037
+          }
+        },
+        {
+          "index": 29,
+          "file": "sara/sara-29.png",
+          "width": 61,
+          "height": 96,
+          "sourceBounds": {
+            "left": 630,
+            "top": 1022,
+            "width": 185,
+            "height": 290,
+            "pixelArea": 37032
+          }
+        },
+        {
+          "index": 30,
+          "file": "sara/sara-30.png",
+          "width": 65,
+          "height": 96,
+          "sourceBounds": {
+            "left": 435,
+            "top": 1023,
+            "width": 195,
+            "height": 289,
+            "pixelArea": 36655
+          }
+        }
+      ]
+    },
+    "usman": {
+      "source": "characters/usman.png",
+      "sourceSize": {
+        "width": 1024,
+        "height": 1536
+      },
+      "backgroundRemoval": {
+        "details": "Retained source alpha channel."
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 26
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "usman/usman-01.png",
+          "width": 52,
+          "height": 96,
+          "sourceBounds": {
+            "left": 809,
+            "top": 11,
+            "width": 123,
+            "height": 229,
+            "pixelArea": 17663
+          }
+        },
+        {
+          "index": 2,
+          "file": "usman/usman-02.png",
+          "width": 54,
+          "height": 96,
+          "sourceBounds": {
+            "left": 96,
+            "top": 12,
+            "width": 125,
+            "height": 223,
+            "pixelArea": 17887
+          }
+        },
+        {
+          "index": 3,
+          "file": "usman/usman-03.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 331,
+            "top": 12,
+            "width": 121,
+            "height": 228,
+            "pixelArea": 17708
+          }
+        },
+        {
+          "index": 4,
+          "file": "usman/usman-04.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 565,
+            "top": 14,
+            "width": 121,
+            "height": 226,
+            "pixelArea": 17133
+          }
+        },
+        {
+          "index": 5,
+          "file": "usman/usman-05.png",
+          "width": 52,
+          "height": 96,
+          "sourceBounds": {
+            "left": 100,
+            "top": 265,
+            "width": 118,
+            "height": 217,
+            "pixelArea": 14828
+          }
+        },
+        {
+          "index": 6,
+          "file": "usman/usman-06.png",
+          "width": 50,
+          "height": 96,
+          "sourceBounds": {
+            "left": 340,
+            "top": 267,
+            "width": 116,
+            "height": 221,
+            "pixelArea": 15208
+          }
+        },
+        {
+          "index": 7,
+          "file": "usman/usman-07.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 576,
+            "top": 267,
+            "width": 117,
+            "height": 220,
+            "pixelArea": 14976
+          }
+        },
+        {
+          "index": 8,
+          "file": "usman/usman-08.png",
+          "width": 52,
+          "height": 96,
+          "sourceBounds": {
+            "left": 808,
+            "top": 268,
+            "width": 119,
+            "height": 220,
+            "pixelArea": 15394
+          }
+        },
+        {
+          "index": 9,
+          "file": "usman/usman-09.png",
+          "width": 53,
+          "height": 96,
+          "sourceBounds": {
+            "left": 814,
+            "top": 509,
+            "width": 115,
+            "height": 210,
+            "pixelArea": 15463
+          }
+        },
+        {
+          "index": 10,
+          "file": "usman/usman-10.png",
+          "width": 50,
+          "height": 96,
+          "sourceBounds": {
+            "left": 100,
+            "top": 511,
+            "width": 109,
+            "height": 208,
+            "pixelArea": 14705
+          }
+        },
+        {
+          "index": 11,
+          "file": "usman/usman-11.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 343,
+            "top": 511,
+            "width": 111,
+            "height": 208,
+            "pixelArea": 14511
+          }
+        },
+        {
+          "index": 12,
+          "file": "usman/usman-12.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 577,
+            "top": 512,
+            "width": 111,
+            "height": 207,
+            "pixelArea": 15058
+          }
+        },
+        {
+          "index": 13,
+          "file": "usman/usman-13.png",
+          "width": 76,
+          "height": 96,
+          "sourceBounds": {
+            "left": 86,
+            "top": 743,
+            "width": 151,
+            "height": 192,
+            "pixelArea": 19478
+          }
+        },
+        {
+          "index": 14,
+          "file": "usman/usman-14.png",
+          "width": 75,
+          "height": 96,
+          "sourceBounds": {
+            "left": 335,
+            "top": 744,
+            "width": 150,
+            "height": 191,
+            "pixelArea": 19422
+          }
+        },
+        {
+          "index": 15,
+          "file": "usman/usman-15.png",
+          "width": 76,
+          "height": 96,
+          "sourceBounds": {
+            "left": 563,
+            "top": 745,
+            "width": 150,
+            "height": 190,
+            "pixelArea": 19198
+          }
+        },
+        {
+          "index": 16,
+          "file": "usman/usman-16.png",
+          "width": 74,
+          "height": 96,
+          "sourceBounds": {
+            "left": 803,
+            "top": 745,
+            "width": 147,
+            "height": 190,
+            "pixelArea": 18803
+          }
+        },
+        {
+          "index": 17,
+          "file": "usman/usman-17.png",
+          "width": 73,
+          "height": 96,
+          "sourceBounds": {
+            "left": 426,
+            "top": 961,
+            "width": 174,
+            "height": 230,
+            "pixelArea": 26763
+          }
+        },
+        {
+          "index": 18,
+          "file": "usman/usman-18.png",
+          "width": 67,
+          "height": 96,
+          "sourceBounds": {
+            "left": 624,
+            "top": 961,
+            "width": 160,
+            "height": 229,
+            "pixelArea": 24131
+          }
+        },
+        {
+          "index": 19,
+          "file": "usman/usman-19.png",
+          "width": 67,
+          "height": 96,
+          "sourceBounds": {
+            "left": 229,
+            "top": 962,
+            "width": 160,
+            "height": 229,
+            "pixelArea": 26402
+          }
+        },
+        {
+          "index": 20,
+          "file": "usman/usman-20.png",
+          "width": 76,
+          "height": 96,
+          "sourceBounds": {
+            "left": 27,
+            "top": 963,
+            "width": 178,
+            "height": 226,
+            "pixelArea": 26394
+          }
+        },
+        {
+          "index": 21,
+          "file": "usman/usman-21.png",
+          "width": 73,
+          "height": 96,
+          "sourceBounds": {
+            "left": 817,
+            "top": 964,
+            "width": 170,
+            "height": 224,
+            "pixelArea": 25073
+          }
+        },
+        {
+          "index": 22,
+          "file": "usman/usman-22.png",
+          "width": 60,
+          "height": 96,
+          "sourceBounds": {
+            "left": 234,
+            "top": 1212,
+            "width": 158,
+            "height": 253,
+            "pixelArea": 28572
+          }
+        },
+        {
+          "index": 23,
+          "file": "usman/usman-23.png",
+          "width": 63,
+          "height": 96,
+          "sourceBounds": {
+            "left": 33,
+            "top": 1216,
+            "width": 165,
+            "height": 250,
+            "pixelArea": 27891
+          }
+        },
+        {
+          "index": 24,
+          "file": "usman/usman-24.png",
+          "width": 61,
+          "height": 96,
+          "sourceBounds": {
+            "left": 441,
+            "top": 1216,
+            "width": 160,
+            "height": 250,
+            "pixelArea": 27567
+          }
+        },
+        {
+          "index": 25,
+          "file": "usman/usman-25.png",
+          "width": 65,
+          "height": 96,
+          "sourceBounds": {
+            "left": 833,
+            "top": 1216,
+            "width": 176,
+            "height": 260,
+            "pixelArea": 30076
+          }
+        },
+        {
+          "index": 26,
+          "file": "usman/usman-26.png",
+          "width": 66,
+          "height": 96,
+          "sourceBounds": {
+            "left": 631,
+            "top": 1222,
+            "width": 174,
+            "height": 254,
+            "pixelArea": 30094
+          }
+        }
+      ]
+    },
+    "zainab": {
+      "source": "characters/Zainab.png",
+      "sourceSize": {
+        "width": 1199,
+        "height": 1312
+      },
+      "backgroundRemoval": {
+        "details": "Retained source alpha channel."
+      },
+      "segmentation": {
+        "method": "8-connected alpha-component bounding boxes",
+        "alphaThreshold": 24,
+        "minimumComponentPixelArea": 1200,
+        "filteredComponentCount": 32
+      },
+      "poses": [
+        {
+          "index": 1,
+          "file": "zainab/zainab-01.png",
+          "width": 50,
+          "height": 96,
+          "sourceBounds": {
+            "left": 29,
+            "top": 8,
+            "width": 124,
+            "height": 237,
+            "pixelArea": 20689
+          }
+        },
+        {
+          "index": 2,
+          "file": "zainab/zainab-02.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 193,
+            "top": 8,
+            "width": 125,
+            "height": 237,
+            "pixelArea": 20682
+          }
+        },
+        {
+          "index": 3,
+          "file": "zainab/zainab-03.png",
+          "width": 52,
+          "height": 96,
+          "sourceBounds": {
+            "left": 358,
+            "top": 8,
+            "width": 127,
+            "height": 236,
+            "pixelArea": 20566
+          }
+        },
+        {
+          "index": 4,
+          "file": "zainab/zainab-04.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 520,
+            "top": 8,
+            "width": 127,
+            "height": 237,
+            "pixelArea": 20737
+          }
+        },
+        {
+          "index": 5,
+          "file": "zainab/zainab-05.png",
+          "width": 49,
+          "height": 96,
+          "sourceBounds": {
+            "left": 680,
+            "top": 10,
+            "width": 121,
+            "height": 236,
+            "pixelArea": 19548
+          }
+        },
+        {
+          "index": 6,
+          "file": "zainab/zainab-06.png",
+          "width": 53,
+          "height": 96,
+          "sourceBounds": {
+            "left": 838,
+            "top": 11,
+            "width": 128,
+            "height": 233,
+            "pixelArea": 20645
+          }
+        },
+        {
+          "index": 7,
+          "file": "zainab/zainab-07.png",
+          "width": 51,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1020,
+            "top": 11,
+            "width": 123,
+            "height": 233,
+            "pixelArea": 20286
+          }
+        },
+        {
+          "index": 8,
+          "file": "zainab/zainab-08.png",
+          "width": 54,
+          "height": 96,
+          "sourceBounds": {
+            "left": 190,
+            "top": 265,
+            "width": 124,
+            "height": 222,
+            "pixelArea": 18359
+          }
+        },
+        {
+          "index": 9,
+          "file": "zainab/zainab-09.png",
+          "width": 54,
+          "height": 96,
+          "sourceBounds": {
+            "left": 357,
+            "top": 268,
+            "width": 123,
+            "height": 219,
+            "pixelArea": 17576
+          }
+        },
+        {
+          "index": 10,
+          "file": "zainab/zainab-10.png",
+          "width": 52,
+          "height": 96,
+          "sourceBounds": {
+            "left": 27,
+            "top": 269,
+            "width": 118,
+            "height": 219,
+            "pixelArea": 18067
+          }
+        },
+        {
+          "index": 11,
+          "file": "zainab/zainab-11.png",
+          "width": 69,
+          "height": 96,
+          "sourceBounds": {
+            "left": 517,
+            "top": 280,
+            "width": 151,
+            "height": 209,
+            "pixelArea": 22840
+          }
+        },
+        {
+          "index": 12,
+          "file": "zainab/zainab-12.png",
+          "width": 71,
+          "height": 96,
+          "sourceBounds": {
+            "left": 685,
+            "top": 285,
+            "width": 151,
+            "height": 204,
+            "pixelArea": 22323
+          }
+        },
+        {
+          "index": 13,
+          "file": "zainab/zainab-13.png",
+          "width": 72,
+          "height": 96,
+          "sourceBounds": {
+            "left": 849,
+            "top": 286,
+            "width": 152,
+            "height": 203,
+            "pixelArea": 22203
+          }
+        },
+        {
+          "index": 14,
+          "file": "zainab/zainab-14.png",
+          "width": 76,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1013,
+            "top": 289,
+            "width": 158,
+            "height": 200,
+            "pixelArea": 21765
+          }
+        },
+        {
+          "index": 15,
+          "file": "zainab/zainab-15.png",
+          "width": 77,
+          "height": 96,
+          "sourceBounds": {
+            "left": 214,
+            "top": 518,
+            "width": 167,
+            "height": 209,
+            "pixelArea": 28549
+          }
+        },
+        {
+          "index": 16,
+          "file": "zainab/zainab-16.png",
+          "width": 87,
+          "height": 96,
+          "sourceBounds": {
+            "left": 409,
+            "top": 519,
+            "width": 188,
+            "height": 208,
+            "pixelArea": 28396
+          }
+        },
+        {
+          "index": 17,
+          "file": "zainab/zainab-17.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 11,
+            "top": 521,
+            "width": 178,
+            "height": 207,
+            "pixelArea": 29014
+          }
+        },
+        {
+          "index": 18,
+          "file": "zainab/zainab-18.png",
+          "width": 81,
+          "height": 96,
+          "sourceBounds": {
+            "left": 608,
+            "top": 522,
+            "width": 172,
+            "height": 205,
+            "pixelArea": 27603
+          }
+        },
+        {
+          "index": 19,
+          "file": "zainab/zainab-19.png",
+          "width": 83,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1008,
+            "top": 524,
+            "width": 179,
+            "height": 208,
+            "pixelArea": 29009
+          }
+        },
+        {
+          "index": 20,
+          "file": "zainab/zainab-20.png",
+          "width": 78,
+          "height": 96,
+          "sourceBounds": {
+            "left": 811,
+            "top": 528,
+            "width": 165,
+            "height": 203,
+            "pixelArea": 26949
+          }
+        },
+        {
+          "index": 21,
+          "file": "zainab/zainab-21.png",
+          "width": 82,
+          "height": 96,
+          "sourceBounds": {
+            "left": 607,
+            "top": 748,
+            "width": 176,
+            "height": 206,
+            "pixelArea": 27823
+          }
+        },
+        {
+          "index": 22,
+          "file": "zainab/zainab-22.png",
+          "width": 75,
+          "height": 96,
+          "sourceBounds": {
+            "left": 816,
+            "top": 751,
+            "width": 164,
+            "height": 209,
+            "pixelArea": 28427
+          }
+        },
+        {
+          "index": 23,
+          "file": "zainab/zainab-23.png",
+          "width": 78,
+          "height": 96,
+          "sourceBounds": {
+            "left": 20,
+            "top": 753,
+            "width": 164,
+            "height": 202,
+            "pixelArea": 26560
+          }
+        },
+        {
+          "index": 24,
+          "file": "zainab/zainab-24.png",
+          "width": 82,
+          "height": 96,
+          "sourceBounds": {
+            "left": 211,
+            "top": 754,
+            "width": 174,
+            "height": 203,
+            "pixelArea": 27734
+          }
+        },
+        {
+          "index": 25,
+          "file": "zainab/zainab-25.png",
+          "width": 78,
+          "height": 96,
+          "sourceBounds": {
+            "left": 411,
+            "top": 754,
+            "width": 162,
+            "height": 199,
+            "pixelArea": 25966
+          }
+        },
+        {
+          "index": 26,
+          "file": "zainab/zainab-26.png",
+          "width": 79,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1009,
+            "top": 755,
+            "width": 169,
+            "height": 205,
+            "pixelArea": 27040
+          }
+        },
+        {
+          "index": 27,
+          "file": "zainab/zainab-27.png",
+          "width": 76,
+          "height": 96,
+          "sourceBounds": {
+            "left": 13,
+            "top": 983,
+            "width": 179,
+            "height": 227,
+            "pixelArea": 33130
+          }
+        },
+        {
+          "index": 28,
+          "file": "zainab/zainab-28.png",
+          "width": 72,
+          "height": 96,
+          "sourceBounds": {
+            "left": 212,
+            "top": 985,
+            "width": 168,
+            "height": 225,
+            "pixelArea": 30746
+          }
+        },
+        {
+          "index": 29,
+          "file": "zainab/zainab-29.png",
+          "width": 71,
+          "height": 96,
+          "sourceBounds": {
+            "left": 813,
+            "top": 986,
+            "width": 164,
+            "height": 222,
+            "pixelArea": 28842
+          }
+        },
+        {
+          "index": 30,
+          "file": "zainab/zainab-30.png",
+          "width": 78,
+          "height": 96,
+          "sourceBounds": {
+            "left": 609,
+            "top": 991,
+            "width": 179,
+            "height": 219,
+            "pixelArea": 30770
+          }
+        },
+        {
+          "index": 31,
+          "file": "zainab/zainab-31.png",
+          "width": 79,
+          "height": 96,
+          "sourceBounds": {
+            "left": 409,
+            "top": 995,
+            "width": 178,
+            "height": 215,
+            "pixelArea": 29960
+          }
+        },
+        {
+          "index": 32,
+          "file": "zainab/zainab-32.png",
+          "width": 76,
+          "height": 96,
+          "sourceBounds": {
+            "left": 1003,
+            "top": 997,
+            "width": 167,
+            "height": 211,
+            "pixelArea": 27261
+          }
+        }
+      ]
+    }
+  },
+  "officeBackground": {
+    "source": "office-bg.png",
+    "sourceSize": {
+      "width": 1586,
+      "height": 992
+    },
+    "crop": {
+      "left": 7,
+      "top": 22,
+      "width": 1549,
+      "height": 894
+    },
+    "removedOuterMarginPixels": 461848,
+    "checkerboardAssessment": "The checkerboard is confined to the outer margin, not the floor. Border-connected neutral pixels were made transparent and the remaining room was cropped; floor tiles remain unchanged.",
+    "output": "office-bg-clean.png"
+  }
+}
