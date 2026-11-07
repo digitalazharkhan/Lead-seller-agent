@@ -11,11 +11,17 @@ update hota hai. sent_log.json mein jinhein bheja ja chuka unka status
 
 import argparse
 import json
+from contextlib import closing
 from datetime import datetime, timezone
 from pathlib import Path
 
 from sender import SENT_LOG, FILE_NAME, is_opted_out, load_json, load_leads, load_opt_outs
-from server import DEFAULT_DB_PATH, connect_database, initialize_database
+from server import (
+    DEFAULT_DB_PATH,
+    connect_database,
+    initialize_database,
+    record_prospect_activity,
+)
 
 
 def import_leads(db_path=DEFAULT_DB_PATH, leads_file=FILE_NAME,
@@ -27,7 +33,7 @@ def import_leads(db_path=DEFAULT_DB_PATH, leads_file=FILE_NAME,
     now = datetime.now(timezone.utc).isoformat()
     added = updated = 0
 
-    with connect_database(Path(db_path)) as db:
+    with closing(connect_database(Path(db_path))) as db, db:
         if purge_demo:
             db.execute("DELETE FROM prospects WHERE is_demo = 1")
 
@@ -53,13 +59,20 @@ def import_leads(db_path=DEFAULT_DB_PATH, leads_file=FILE_NAME,
                 (name, city),
             ).fetchone()
             if row is None:
-                db.execute(
+                cursor = db.execute(
                     """INSERT INTO prospects (name, category, city, phone, email,
                        website_url, has_website, lead_score, status, review_count,
                        is_demo, created_at, updated_at)
                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?, ?)""",
                     (name[:120], category, city, phone, email, website,
                      1 if website else None, score, status, now, now),
+                )
+                record_prospect_activity(
+                    db,
+                    cursor.lastrowid,
+                    "imported",
+                    to_status=status,
+                    created_at=now,
                 )
                 added += 1
             else:
@@ -70,6 +83,22 @@ def import_leads(db_path=DEFAULT_DB_PATH, leads_file=FILE_NAME,
                     "lead_score = ?, status = ?, updated_at = ? WHERE id = ?",
                     (email, phone, website, score, new_status, now, row["id"]),
                 )
+                record_prospect_activity(
+                    db,
+                    row["id"],
+                    "imported",
+                    to_status=new_status,
+                    created_at=now,
+                )
+                if row["status"] != new_status:
+                    record_prospect_activity(
+                        db,
+                        row["id"],
+                        "status_changed",
+                        from_status=row["status"],
+                        to_status=new_status,
+                        created_at=now,
+                    )
                 updated += 1
 
     print(f"✅ {added} nayi leads, {updated} update. Database: {Path(db_path).resolve()}")

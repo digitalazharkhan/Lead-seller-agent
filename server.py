@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import sqlite3
+from contextlib import closing
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -51,7 +52,7 @@ def connect_database(database_path: Path) -> sqlite3.Connection:
 
 def initialize_database(database_path: Path) -> None:
     database_path.parent.mkdir(parents=True, exist_ok=True)
-    with connect_database(database_path) as connection:
+    with closing(connect_database(database_path)) as connection, connection:
         connection.execute(
             """
             CREATE TABLE IF NOT EXISTS prospects (
@@ -73,6 +74,24 @@ def initialize_database(database_path: Path) -> None:
             )
             """
         )
+        connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS prospect_activity_events (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                prospect_id INTEGER NOT NULL
+                    REFERENCES prospects(id) ON DELETE CASCADE,
+                event_type TEXT NOT NULL
+                    CHECK(event_type IN ('created', 'status_changed', 'imported')),
+                from_status TEXT,
+                to_status TEXT,
+                created_at TEXT NOT NULL
+            )
+            """
+        )
+        connection.execute(
+            "CREATE INDEX IF NOT EXISTS prospect_activity_events_prospect_idx "
+            "ON prospect_activity_events(prospect_id, id DESC)"
+        )
         existing_count = connection.execute(
             "SELECT COUNT(*) FROM prospects"
         ).fetchone()[0]
@@ -90,6 +109,33 @@ def initialize_database(database_path: Path) -> None:
                     for prospect in DEMO_PROSPECTS
                 ],
             )
+
+
+def record_prospect_activity(
+    connection: sqlite3.Connection,
+    prospect_id: int,
+    event_type: str,
+    *,
+    from_status: str | None = None,
+    to_status: str | None = None,
+    created_at: str | None = None,
+) -> None:
+    if event_type not in {"created", "status_changed", "imported"}:
+        raise ValueError("Unsupported prospect activity event.")
+    connection.execute(
+        """
+        INSERT INTO prospect_activity_events
+            (prospect_id, event_type, from_status, to_status, created_at)
+        VALUES (?, ?, ?, ?, ?)
+        """,
+        (
+            prospect_id,
+            event_type,
+            from_status,
+            to_status,
+            created_at or datetime.now(timezone.utc).isoformat(),
+        ),
+    )
 
 
 def prospect_to_json(row: sqlite3.Row) -> dict[str, Any]:
@@ -181,11 +227,44 @@ class SiteSellerHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         path = urlsplit(self.path).path
         if path == "/api/prospects":
-            with connect_database(self.database_path) as connection:
+            with closing(connect_database(self.database_path)) as connection, connection:
                 rows = connection.execute(
                     "SELECT * FROM prospects ORDER BY lead_score DESC, id ASC"
                 ).fetchall()
             self.send_json(200, [prospect_to_json(row) for row in rows])
+            return
+        activity_match = re.fullmatch(r"/api/prospects/([0-9]+)/activity", path)
+        if activity_match:
+            prospect_id = int(activity_match.group(1))
+            with closing(connect_database(self.database_path)) as connection:
+                exists = connection.execute(
+                    "SELECT 1 FROM prospects WHERE id = ?", (prospect_id,)
+                ).fetchone()
+                if exists is None:
+                    self.send_json(404, {"error": "Prospect not found."})
+                    return
+                rows = connection.execute(
+                    "SELECT id, prospect_id, event_type, from_status, to_status, created_at "
+                    "FROM prospect_activity_events WHERE prospect_id = ? "
+                    "ORDER BY id DESC LIMIT 100",
+                    (prospect_id,),
+                ).fetchall()
+            self.send_json(
+                200,
+                {
+                    "activities": [
+                        {
+                            "id": row["id"],
+                            "prospectId": row["prospect_id"],
+                            "eventType": row["event_type"],
+                            "fromStatus": row["from_status"],
+                            "toStatus": row["to_status"],
+                            "createdAt": row["created_at"],
+                        }
+                        for row in rows
+                    ]
+                },
+            )
             return
 
         static_files = {
@@ -221,7 +300,7 @@ class SiteSellerHandler(BaseHTTPRequestHandler):
             return
 
         now = datetime.now(timezone.utc).isoformat()
-        with connect_database(self.database_path) as connection:
+        with closing(connect_database(self.database_path)) as connection, connection:
             cursor = connection.execute(
                 """
                 INSERT INTO prospects (
@@ -244,6 +323,13 @@ class SiteSellerHandler(BaseHTTPRequestHandler):
             row = connection.execute(
                 "SELECT * FROM prospects WHERE id = ?", (cursor.lastrowid,)
             ).fetchone()
+            record_prospect_activity(
+                connection,
+                cursor.lastrowid,
+                "created",
+                to_status="new",
+                created_at=now,
+            )
         self.send_json(201, prospect_to_json(row))
 
     def do_PATCH(self) -> None:
@@ -265,11 +351,25 @@ class SiteSellerHandler(BaseHTTPRequestHandler):
             return
 
         prospect_id = int(match.group(1))
-        with connect_database(self.database_path) as connection:
-            connection.execute(
-                "UPDATE prospects SET status = ?, updated_at = ? WHERE id = ?",
-                (status, datetime.now(timezone.utc).isoformat(), prospect_id),
-            )
+        now = datetime.now(timezone.utc).isoformat()
+        with closing(connect_database(self.database_path)) as connection, connection:
+            previous = connection.execute(
+                "SELECT status FROM prospects WHERE id = ?", (prospect_id,)
+            ).fetchone()
+            if previous is not None:
+                connection.execute(
+                    "UPDATE prospects SET status = ?, updated_at = ? WHERE id = ?",
+                    (status, now, prospect_id),
+                )
+                if previous["status"] != status:
+                    record_prospect_activity(
+                        connection,
+                        prospect_id,
+                        "status_changed",
+                        from_status=previous["status"],
+                        to_status=status,
+                        created_at=now,
+                    )
             row = connection.execute(
                 "SELECT * FROM prospects WHERE id = ?", (prospect_id,)
             ).fetchone()

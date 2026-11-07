@@ -1,11 +1,12 @@
 import json
+import sqlite3
 import tempfile
 import threading
 import unittest
 from http.client import HTTPConnection
 from pathlib import Path
 
-from server import create_server
+from server import create_server, initialize_database
 
 
 class ProspectApiTests(unittest.TestCase):
@@ -60,6 +61,14 @@ class ProspectApiTests(unittest.TestCase):
         self.assertEqual(get_status, 200)
         self.assertEqual(stored["name"], "Cedar House Studio")
         self.assertFalse(stored["isDemo"])
+        activity_status, activity_response = self.request(
+            "GET", f"/api/prospects/{prospect['id']}/activity"
+        )
+        self.assertEqual(activity_status, 200)
+        self.assertEqual(len(activity_response["activities"]), 1)
+        self.assertEqual(activity_response["activities"][0]["eventType"], "created")
+        self.assertEqual(activity_response["activities"][0]["toStatus"], "new")
+        self.assertTrue(activity_response["activities"][0]["createdAt"])
 
     def test_post_rejects_missing_required_fields(self):
         status, response = self.request(
@@ -98,10 +107,67 @@ class ProspectApiTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(updated["status"], "contacted")
 
+        activity_status, activity_response = self.request(
+            "GET", f"/api/prospects/{prospect_id}/activity"
+        )
+        self.assertEqual(activity_status, 200)
+        self.assertEqual(len(activity_response["activities"]), 1)
+        activity = activity_response["activities"][0]
+        self.assertEqual(activity["eventType"], "status_changed")
+        self.assertEqual(activity["fromStatus"], "new")
+        self.assertEqual(activity["toStatus"], "contacted")
+        self.assertTrue(activity["createdAt"])
+
+        self.request(
+            "PATCH", f"/api/prospects/{prospect_id}/status", {"status": "contacted"}
+        )
+        _, unchanged_activity = self.request(
+            "GET", f"/api/prospects/{prospect_id}/activity"
+        )
+        self.assertEqual(len(unchanged_activity["activities"]), 1)
+
         self.restart_server()
         _, prospects = self.request("GET", "/api/prospects")
         stored = next(item for item in prospects if item["id"] == prospect_id)
         self.assertEqual(stored["status"], "contacted")
+        _, persisted_activity = self.request(
+            "GET", f"/api/prospects/{prospect_id}/activity"
+        )
+        self.assertEqual(len(persisted_activity["activities"]), 1)
+
+    def test_activity_endpoint_returns_not_found_for_unknown_prospect(self):
+        status, response = self.request("GET", "/api/prospects/999999/activity")
+        self.assertEqual(status, 404)
+        self.assertEqual(response["error"], "Prospect not found.")
+
+    def test_activity_schema_migration_is_additive_and_idempotent(self):
+        connection = sqlite3.connect(self.database_path)
+        try:
+            columns_before = [
+                row[1] for row in connection.execute("PRAGMA table_info(prospects)")
+            ]
+            count_before = connection.execute("SELECT COUNT(*) FROM prospects").fetchone()[0]
+            self.assertEqual(
+                connection.execute(
+                    "SELECT COUNT(*) FROM sqlite_master "
+                    "WHERE type = 'table' AND name = 'prospect_activity_events'"
+                ).fetchone()[0],
+                1,
+            )
+        finally:
+            connection.close()
+
+        initialize_database(self.database_path)
+        connection = sqlite3.connect(self.database_path)
+        try:
+            columns_after = [
+                row[1] for row in connection.execute("PRAGMA table_info(prospects)")
+            ]
+            count_after = connection.execute("SELECT COUNT(*) FROM prospects").fetchone()[0]
+        finally:
+            connection.close()
+        self.assertEqual(columns_after, columns_before)
+        self.assertEqual(count_after, count_before)
 
     def test_status_endpoint_returns_not_found_for_unknown_prospect(self):
         status, response = self.request(
