@@ -1,0 +1,1373 @@
+{
+  "generatedAt": "2026-11-07T05:06:29.153Z",
+  "processing": {
+    "targetHeight": 48,
+    "displayHeight": 96,
+    "resizeKernel": "nearest",
+    "paletteColors": 32,
+    "outline": "one-pixel 8-connected dark outline",
+    "sourceAssetsPreserved": true
+  },
+  "characters": {
+    "azhar": {
+      "poses": [
+        {
+          "file": "azhar/azhar-01.png",
+          "source": "processed/azhar/azhar-01.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-02.png",
+          "source": "processed/azhar/azhar-02.png",
+          "width": 36,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-03.png",
+          "source": "processed/azhar/azhar-03.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-04.png",
+          "source": "processed/azhar/azhar-04.png",
+          "width": 53,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-05.png",
+          "source": "processed/azhar/azhar-05.png",
+          "width": 16,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-06.png",
+          "source": "processed/azhar/azhar-06.png",
+          "width": 19,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-07.png",
+          "source": "processed/azhar/azhar-07.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-08.png",
+          "source": "processed/azhar/azhar-08.png",
+          "width": 25,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-09.png",
+          "source": "processed/azhar/azhar-09.png",
+          "width": 35,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-10.png",
+          "source": "processed/azhar/azhar-10.png",
+          "width": 32,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-11.png",
+          "source": "processed/azhar/azhar-11.png",
+          "width": 33,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-12.png",
+          "source": "processed/azhar/azhar-12.png",
+          "width": 60,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-13.png",
+          "source": "processed/azhar/azhar-13.png",
+          "width": 61,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-14.png",
+          "source": "processed/azhar/azhar-14.png",
+          "width": 46,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-15.png",
+          "source": "processed/azhar/azhar-15.png",
+          "width": 51,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-16.png",
+          "source": "processed/azhar/azhar-16.png",
+          "width": 49,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-17.png",
+          "source": "processed/azhar/azhar-17.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-18.png",
+          "source": "processed/azhar/azhar-18.png",
+          "width": 57,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-19.png",
+          "source": "processed/azhar/azhar-19.png",
+          "width": 52,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-20.png",
+          "source": "processed/azhar/azhar-20.png",
+          "width": 52,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-21.png",
+          "source": "processed/azhar/azhar-21.png",
+          "width": 36,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-22.png",
+          "source": "processed/azhar/azhar-22.png",
+          "width": 61,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-23.png",
+          "source": "processed/azhar/azhar-23.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-24.png",
+          "source": "processed/azhar/azhar-24.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-25.png",
+          "source": "processed/azhar/azhar-25.png",
+          "width": 62,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-26.png",
+          "source": "processed/azhar/azhar-26.png",
+          "width": 58,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-27.png",
+          "source": "processed/azhar/azhar-27.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-28.png",
+          "source": "processed/azhar/azhar-28.png",
+          "width": 56,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-29.png",
+          "source": "processed/azhar/azhar-29.png",
+          "width": 65,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-30.png",
+          "source": "processed/azhar/azhar-30.png",
+          "width": 58,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-31.png",
+          "source": "processed/azhar/azhar-31.png",
+          "width": 71,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-32.png",
+          "source": "processed/azhar/azhar-32.png",
+          "width": 46,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-33.png",
+          "source": "processed/azhar/azhar-33.png",
+          "width": 90,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-34.png",
+          "source": "processed/azhar/azhar-34.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-35.png",
+          "source": "processed/azhar/azhar-35.png",
+          "width": 52,
+          "height": 50
+        },
+        {
+          "file": "azhar/azhar-36.png",
+          "source": "processed/azhar/azhar-36.png",
+          "width": 33,
+          "height": 50
+        }
+      ],
+      "dedicatedPoses": {
+        "sit": {
+          "file": "azhar/azhar-sit.png",
+          "source": "processed/ali/ali-20.png",
+          "placeholder": true,
+          "width": 30,
+          "height": 50
+        },
+        "stand": {
+          "file": "azhar/azhar-stand.png",
+          "source": "processed/ali/ali-02.png",
+          "placeholder": true,
+          "width": 23,
+          "height": 50
+        },
+        "angry": {
+          "file": "azhar/azhar-angry.png",
+          "source": "processed/ali/ali-02.png",
+          "placeholder": true,
+          "width": 23,
+          "height": 50
+        },
+        "success": {
+          "file": "azhar/azhar-success.png",
+          "source": "processed/ali/ali-02.png",
+          "placeholder": true,
+          "width": 23,
+          "height": 50
+        },
+        "walk": {
+          "file": "azhar/azhar-walk.png",
+          "source": "processed/ali/ali-08.png",
+          "placeholder": true,
+          "width": 24,
+          "height": 50
+        },
+        "talk": {
+          "file": "azhar/azhar-talk.png",
+          "source": "processed/ali/ali-21.png",
+          "placeholder": true,
+          "width": 30,
+          "height": 50
+        }
+      }
+    },
+    "khan": {
+      "poses": [
+        {
+          "file": "khan/khan-01.png",
+          "source": "processed/khan/khan-01.png",
+          "width": 43,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-02.png",
+          "source": "processed/khan/khan-02.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-03.png",
+          "source": "processed/khan/khan-03.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-04.png",
+          "source": "processed/khan/khan-04.png",
+          "width": 42,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-05.png",
+          "source": "processed/khan/khan-05.png",
+          "width": 43,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-06.png",
+          "source": "processed/khan/khan-06.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-07.png",
+          "source": "processed/khan/khan-07.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-08.png",
+          "source": "processed/khan/khan-08.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-09.png",
+          "source": "processed/khan/khan-09.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-10.png",
+          "source": "processed/khan/khan-10.png",
+          "width": 43,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-11.png",
+          "source": "processed/khan/khan-11.png",
+          "width": 42,
+          "height": 50
+        },
+        {
+          "file": "khan/khan-12.png",
+          "source": "processed/khan/khan-12.png",
+          "width": 44,
+          "height": 50
+        }
+      ]
+    },
+    "ali": {
+      "poses": [
+        {
+          "file": "ali/ali-01.png",
+          "source": "processed/ali/ali-01.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-02.png",
+          "source": "processed/ali/ali-02.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-03.png",
+          "source": "processed/ali/ali-03.png",
+          "width": 24,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-04.png",
+          "source": "processed/ali/ali-04.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-05.png",
+          "source": "processed/ali/ali-05.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-06.png",
+          "source": "processed/ali/ali-06.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-07.png",
+          "source": "processed/ali/ali-07.png",
+          "width": 24,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-08.png",
+          "source": "processed/ali/ali-08.png",
+          "width": 24,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-09.png",
+          "source": "processed/ali/ali-09.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-10.png",
+          "source": "processed/ali/ali-10.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-11.png",
+          "source": "processed/ali/ali-11.png",
+          "width": 24,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-12.png",
+          "source": "processed/ali/ali-12.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-13.png",
+          "source": "processed/ali/ali-13.png",
+          "width": 22,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-14.png",
+          "source": "processed/ali/ali-14.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-15.png",
+          "source": "processed/ali/ali-15.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-16.png",
+          "source": "processed/ali/ali-16.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-17.png",
+          "source": "processed/ali/ali-17.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-18.png",
+          "source": "processed/ali/ali-18.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-19.png",
+          "source": "processed/ali/ali-19.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-20.png",
+          "source": "processed/ali/ali-20.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-21.png",
+          "source": "processed/ali/ali-21.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-22.png",
+          "source": "processed/ali/ali-22.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-23.png",
+          "source": "processed/ali/ali-23.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "ali/ali-24.png",
+          "source": "processed/ali/ali-24.png",
+          "width": 27,
+          "height": 50
+        }
+      ]
+    },
+    "ayesha": {
+      "poses": [
+        {
+          "file": "ayesha/ayesha-01.png",
+          "source": "processed/ayesha/ayesha-01.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-02.png",
+          "source": "processed/ayesha/ayesha-02.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-03.png",
+          "source": "processed/ayesha/ayesha-03.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-04.png",
+          "source": "processed/ayesha/ayesha-04.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-05.png",
+          "source": "processed/ayesha/ayesha-05.png",
+          "width": 25,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-06.png",
+          "source": "processed/ayesha/ayesha-06.png",
+          "width": 25,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-07.png",
+          "source": "processed/ayesha/ayesha-07.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-08.png",
+          "source": "processed/ayesha/ayesha-08.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-09.png",
+          "source": "processed/ayesha/ayesha-09.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-10.png",
+          "source": "processed/ayesha/ayesha-10.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-11.png",
+          "source": "processed/ayesha/ayesha-11.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-12.png",
+          "source": "processed/ayesha/ayesha-12.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-13.png",
+          "source": "processed/ayesha/ayesha-13.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-14.png",
+          "source": "processed/ayesha/ayesha-14.png",
+          "width": 38,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-15.png",
+          "source": "processed/ayesha/ayesha-15.png",
+          "width": 32,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-16.png",
+          "source": "processed/ayesha/ayesha-16.png",
+          "width": 35,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-17.png",
+          "source": "processed/ayesha/ayesha-17.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-18.png",
+          "source": "processed/ayesha/ayesha-18.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-19.png",
+          "source": "processed/ayesha/ayesha-19.png",
+          "width": 37,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-20.png",
+          "source": "processed/ayesha/ayesha-20.png",
+          "width": 42,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-21.png",
+          "source": "processed/ayesha/ayesha-21.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-22.png",
+          "source": "processed/ayesha/ayesha-22.png",
+          "width": 36,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-23.png",
+          "source": "processed/ayesha/ayesha-23.png",
+          "width": 37,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-24.png",
+          "source": "processed/ayesha/ayesha-24.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-25.png",
+          "source": "processed/ayesha/ayesha-25.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-26.png",
+          "source": "processed/ayesha/ayesha-26.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-27.png",
+          "source": "processed/ayesha/ayesha-27.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-28.png",
+          "source": "processed/ayesha/ayesha-28.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-29.png",
+          "source": "processed/ayesha/ayesha-29.png",
+          "width": 32,
+          "height": 50
+        },
+        {
+          "file": "ayesha/ayesha-30.png",
+          "source": "processed/ayesha/ayesha-30.png",
+          "width": 31,
+          "height": 50
+        }
+      ]
+    },
+    "hassan": {
+      "poses": [
+        {
+          "file": "hassan/hassan-01.png",
+          "source": "processed/hassan/hassan-01.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-02.png",
+          "source": "processed/hassan/hassan-02.png",
+          "width": 22,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-03.png",
+          "source": "processed/hassan/hassan-03.png",
+          "width": 22,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-04.png",
+          "source": "processed/hassan/hassan-04.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-05.png",
+          "source": "processed/hassan/hassan-05.png",
+          "width": 24,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-06.png",
+          "source": "processed/hassan/hassan-06.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-07.png",
+          "source": "processed/hassan/hassan-07.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-08.png",
+          "source": "processed/hassan/hassan-08.png",
+          "width": 24,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-09.png",
+          "source": "processed/hassan/hassan-09.png",
+          "width": 21,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-10.png",
+          "source": "processed/hassan/hassan-10.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-11.png",
+          "source": "processed/hassan/hassan-11.png",
+          "width": 22,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-12.png",
+          "source": "processed/hassan/hassan-12.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-13.png",
+          "source": "processed/hassan/hassan-13.png",
+          "width": 25,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-14.png",
+          "source": "processed/hassan/hassan-14.png",
+          "width": 21,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-15.png",
+          "source": "processed/hassan/hassan-15.png",
+          "width": 23,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-16.png",
+          "source": "processed/hassan/hassan-16.png",
+          "width": 24,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-17.png",
+          "source": "processed/hassan/hassan-17.png",
+          "width": 25,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-18.png",
+          "source": "processed/hassan/hassan-18.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-19.png",
+          "source": "processed/hassan/hassan-19.png",
+          "width": 25,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-20.png",
+          "source": "processed/hassan/hassan-20.png",
+          "width": 31,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-21.png",
+          "source": "processed/hassan/hassan-21.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-22.png",
+          "source": "processed/hassan/hassan-22.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-23.png",
+          "source": "processed/hassan/hassan-23.png",
+          "width": 14,
+          "height": 50
+        },
+        {
+          "file": "hassan/hassan-24.png",
+          "source": "processed/hassan/hassan-24.png",
+          "width": 15,
+          "height": 50
+        }
+      ]
+    },
+    "sara": {
+      "poses": [
+        {
+          "file": "sara/sara-01.png",
+          "source": "processed/sara/sara-01.png",
+          "width": 31,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-02.png",
+          "source": "processed/sara/sara-02.png",
+          "width": 31,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-03.png",
+          "source": "processed/sara/sara-03.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-04.png",
+          "source": "processed/sara/sara-04.png",
+          "width": 31,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-05.png",
+          "source": "processed/sara/sara-05.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-06.png",
+          "source": "processed/sara/sara-06.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-07.png",
+          "source": "processed/sara/sara-07.png",
+          "width": 32,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-08.png",
+          "source": "processed/sara/sara-08.png",
+          "width": 30,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-09.png",
+          "source": "processed/sara/sara-09.png",
+          "width": 32,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-10.png",
+          "source": "processed/sara/sara-10.png",
+          "width": 31,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-11.png",
+          "source": "processed/sara/sara-11.png",
+          "width": 31,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-12.png",
+          "source": "processed/sara/sara-12.png",
+          "width": 26,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-13.png",
+          "source": "processed/sara/sara-13.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-14.png",
+          "source": "processed/sara/sara-14.png",
+          "width": 37,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-15.png",
+          "source": "processed/sara/sara-15.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-16.png",
+          "source": "processed/sara/sara-16.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-17.png",
+          "source": "processed/sara/sara-17.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-18.png",
+          "source": "processed/sara/sara-18.png",
+          "width": 37,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-19.png",
+          "source": "processed/sara/sara-19.png",
+          "width": 46,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-20.png",
+          "source": "processed/sara/sara-20.png",
+          "width": 45,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-21.png",
+          "source": "processed/sara/sara-21.png",
+          "width": 42,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-22.png",
+          "source": "processed/sara/sara-22.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-23.png",
+          "source": "processed/sara/sara-23.png",
+          "width": 43,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-24.png",
+          "source": "processed/sara/sara-24.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-25.png",
+          "source": "processed/sara/sara-25.png",
+          "width": 36,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-26.png",
+          "source": "processed/sara/sara-26.png",
+          "width": 33,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-27.png",
+          "source": "processed/sara/sara-27.png",
+          "width": 31,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-28.png",
+          "source": "processed/sara/sara-28.png",
+          "width": 32,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-29.png",
+          "source": "processed/sara/sara-29.png",
+          "width": 33,
+          "height": 50
+        },
+        {
+          "file": "sara/sara-30.png",
+          "source": "processed/sara/sara-30.png",
+          "width": 35,
+          "height": 50
+        }
+      ]
+    },
+    "usman": {
+      "poses": [
+        {
+          "file": "usman/usman-01.png",
+          "source": "processed/usman/usman-01.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-02.png",
+          "source": "processed/usman/usman-02.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-03.png",
+          "source": "processed/usman/usman-03.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-04.png",
+          "source": "processed/usman/usman-04.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-05.png",
+          "source": "processed/usman/usman-05.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-06.png",
+          "source": "processed/usman/usman-06.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-07.png",
+          "source": "processed/usman/usman-07.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-08.png",
+          "source": "processed/usman/usman-08.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-09.png",
+          "source": "processed/usman/usman-09.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-10.png",
+          "source": "processed/usman/usman-10.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-11.png",
+          "source": "processed/usman/usman-11.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-12.png",
+          "source": "processed/usman/usman-12.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-13.png",
+          "source": "processed/usman/usman-13.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-14.png",
+          "source": "processed/usman/usman-14.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-15.png",
+          "source": "processed/usman/usman-15.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-16.png",
+          "source": "processed/usman/usman-16.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-17.png",
+          "source": "processed/usman/usman-17.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-18.png",
+          "source": "processed/usman/usman-18.png",
+          "width": 36,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-19.png",
+          "source": "processed/usman/usman-19.png",
+          "width": 36,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-20.png",
+          "source": "processed/usman/usman-20.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-21.png",
+          "source": "processed/usman/usman-21.png",
+          "width": 39,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-22.png",
+          "source": "processed/usman/usman-22.png",
+          "width": 32,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-23.png",
+          "source": "processed/usman/usman-23.png",
+          "width": 34,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-24.png",
+          "source": "processed/usman/usman-24.png",
+          "width": 33,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-25.png",
+          "source": "processed/usman/usman-25.png",
+          "width": 35,
+          "height": 50
+        },
+        {
+          "file": "usman/usman-26.png",
+          "source": "processed/usman/usman-26.png",
+          "width": 35,
+          "height": 50
+        }
+      ]
+    },
+    "zainab": {
+      "poses": [
+        {
+          "file": "zainab/zainab-01.png",
+          "source": "processed/zainab/zainab-01.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-02.png",
+          "source": "processed/zainab/zainab-02.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-03.png",
+          "source": "processed/zainab/zainab-03.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-04.png",
+          "source": "processed/zainab/zainab-04.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-05.png",
+          "source": "processed/zainab/zainab-05.png",
+          "width": 27,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-06.png",
+          "source": "processed/zainab/zainab-06.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-07.png",
+          "source": "processed/zainab/zainab-07.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-08.png",
+          "source": "processed/zainab/zainab-08.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-09.png",
+          "source": "processed/zainab/zainab-09.png",
+          "width": 29,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-10.png",
+          "source": "processed/zainab/zainab-10.png",
+          "width": 28,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-11.png",
+          "source": "processed/zainab/zainab-11.png",
+          "width": 37,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-12.png",
+          "source": "processed/zainab/zainab-12.png",
+          "width": 38,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-13.png",
+          "source": "processed/zainab/zainab-13.png",
+          "width": 38,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-14.png",
+          "source": "processed/zainab/zainab-14.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-15.png",
+          "source": "processed/zainab/zainab-15.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-16.png",
+          "source": "processed/zainab/zainab-16.png",
+          "width": 46,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-17.png",
+          "source": "processed/zainab/zainab-17.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-18.png",
+          "source": "processed/zainab/zainab-18.png",
+          "width": 43,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-19.png",
+          "source": "processed/zainab/zainab-19.png",
+          "width": 44,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-20.png",
+          "source": "processed/zainab/zainab-20.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-21.png",
+          "source": "processed/zainab/zainab-21.png",
+          "width": 43,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-22.png",
+          "source": "processed/zainab/zainab-22.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-23.png",
+          "source": "processed/zainab/zainab-23.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-24.png",
+          "source": "processed/zainab/zainab-24.png",
+          "width": 43,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-25.png",
+          "source": "processed/zainab/zainab-25.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-26.png",
+          "source": "processed/zainab/zainab-26.png",
+          "width": 42,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-27.png",
+          "source": "processed/zainab/zainab-27.png",
+          "width": 40,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-28.png",
+          "source": "processed/zainab/zainab-28.png",
+          "width": 38,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-29.png",
+          "source": "processed/zainab/zainab-29.png",
+          "width": 38,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-30.png",
+          "source": "processed/zainab/zainab-30.png",
+          "width": 41,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-31.png",
+          "source": "processed/zainab/zainab-31.png",
+          "width": 42,
+          "height": 50
+        },
+        {
+          "file": "zainab/zainab-32.png",
+          "source": "processed/zainab/zainab-32.png",
+          "width": 40,
+          "height": 50
+        }
+      ]
+    }
+  }
+}

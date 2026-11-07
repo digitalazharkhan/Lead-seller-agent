@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
   FormEvent,
   useCallback,
@@ -35,6 +36,10 @@ import {
   useId,
 } from "react";
 import styles from "./office.module.css";
+
+const OfficeSpriteScene = dynamic(() => import("./office-sprite-scene"), {
+  ssr: false,
+});
 
 type TaskType = "discover" | "emails" | "score" | "pitch" | "import" | "send";
 type TaskStatus =
@@ -269,8 +274,8 @@ const OFFICE_STAFF: OfficeStaff[] = [
 ];
 
 const STAFF_STATIONS: Record<StaffId, StaffStation> = {
-  azhar: { x: 42, y: 800, width: 390, leadership: true },
-  khan: { x: 470, y: 70, width: 560, leadership: true },
+  azhar: { x: 470, y: 70, width: 560, leadership: true },
+  khan: { x: 42, y: 800, width: 390, leadership: true },
   ali: { x: 1110, y: 200, width: 440 },
   ayesha: { x: 1110, y: 470, width: 440 },
   hassan: { x: 1110, y: 740, width: 440 },
@@ -280,12 +285,12 @@ const STAFF_STATIONS: Record<StaffId, StaffStation> = {
 };
 
 const LOUNGE_POSITIONS: Partial<Record<StaffId, { x: number; y: number }>> = {
-  ali: { x: 570, y: 485 },
-  ayesha: { x: 720, y: 485 },
-  hassan: { x: 870, y: 485 },
-  sara: { x: 570, y: 625 },
-  usman: { x: 720, y: 625 },
-  zainab: { x: 870, y: 625 },
+  ali: { x: 570, y: 450 },
+  ayesha: { x: 760, y: 450 },
+  hassan: { x: 950, y: 450 },
+  sara: { x: 570, y: 650 },
+  usman: { x: 760, y: 650 },
+  zainab: { x: 950, y: 650 },
 };
 
 const TASK_LABELS: Record<TaskType, string> = {
@@ -710,7 +715,7 @@ function CharacterIllustration({
   );
 }
 
-function OfficeFloor({
+function LegacyOfficeFloor({
   tasks,
   selectedStaffId,
   onSelectStaff,
@@ -940,8 +945,8 @@ function OfficeFloor({
         <path d="M28 765H454V1200H28Z" fill="#d9e3e1" fillOpacity=".58" stroke="#fff" strokeWidth="11" />
         <path d="M454 765V1200M28 765H454" fill="none" stroke="#9bb5b6" strokeWidth="3" />
         <path d="M191 765V805M260 765V805" stroke="#fff" strokeWidth="12" />
-        <text x="56" y="800" className={styles.floorZoneLabel}>AZHAR · PRIVATE OFFICE</text>
-        <text x="470" y="64" className={styles.floorZoneLabel}>KHAN · GLASS MANAGER CABIN</text>
+        <text x="56" y="800" className={styles.floorZoneLabel}>KHAN · PRIVATE OFFICE</text>
+        <text x="470" y="64" className={styles.floorZoneLabel}>AZHAR · GLASS MANAGER CABIN</text>
         <text x="492" y="395" className={styles.floorZoneLabel}>SHARED LOUNGE</text>
         <text x="1114" y="160" className={styles.floorZoneLabel}>OPERATIONS DESKS</text>
         <text x="1114" y="183" className={styles.floorSubLabel}>SIX SCRIPT-BACKED EMPLOYEES</text>
@@ -1193,6 +1198,7 @@ export function OfficeClient() {
   const [hoveredStaffId, setHoveredStaffId] = useState<StaffId | null>(null);
   const [floorMode, setFloorMode] = useState<FloorMode>("desks");
   const [floorCue, setFloorCue] = useState<FloorCue | null>(null);
+  const [azharPosePlaceholder, setAzharPosePlaceholder] = useState(true);
   const [selectedProspectId, setSelectedProspectId] = useState<number | null>(null);
   const [selectedLeadName, setSelectedLeadName] = useState("");
   const [prospectSearch, setProspectSearch] = useState("");
@@ -1225,6 +1231,33 @@ export function OfficeClient() {
   const floorCueTimerRef = useRef<number | null>(null);
   const floorCueSequenceRef = useRef(0);
   const floorCueEventsRef = useRef(new Set<string>());
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void fetch("/office/processed-pixel/manifest.json", { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("Pixel pose manifest is unavailable.");
+        return response.json() as Promise<unknown>;
+      })
+      .then((payload) => {
+        if (!isRecord(payload) || !isRecord(payload.characters) ||
+            !isRecord(payload.characters.azhar) ||
+            !isRecord(payload.characters.azhar.dedicatedPoses)) {
+          throw new Error("Pixel pose manifest has no Azhar pose mapping.");
+        }
+        const azharPoses = payload.characters.azhar.dedicatedPoses;
+        const requiredPoses = ["sit", "stand", "angry", "success", "walk"];
+        setAzharPosePlaceholder(
+          !requiredPoses.every((pose) =>
+            isRecord(azharPoses[pose]) && azharPoses[pose].placeholder === false,
+          ),
+        );
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setAzharPosePlaceholder(true);
+      });
+    return () => controller.abort();
+  }, []);
 
   const showFloorCue = useCallback((cue: Omit<FloorCue, "sequence">) => {
     setFloorMode("desks");
@@ -1343,7 +1376,7 @@ export function OfficeClient() {
             if (!task) return;
             const cueType = event.type === "queued" || event.type === "assigned"
               ? "recall"
-              : event.type === "failed" || event.type === "timed_out"
+              : event.type === "failed" || event.type === "timed_out" || event.type === "interrupted"
                 ? "recall"
                 : event.type === "completed" && task.status === "completed"
                   ? "success"
@@ -1359,9 +1392,7 @@ export function OfficeClient() {
               staffId: cueType === "success" ? OFFICE_STAFF.find((staff) => staff.task === task.task)?.id : undefined,
               message: cueType === "success"
                 ? `${employee?.name ?? "The team"} completed ${TASK_LABELS[task.task]}.`
-                : event.type === "queued" || event.type === "assigned"
-                  ? `${employee?.name ?? "An employee"} is heading to their workstation.`
-                  : "An execution issue needs Khan’s review.",
+                : "Sab apni seat par!",
             });
           });
         }
@@ -1902,18 +1933,33 @@ export function OfficeClient() {
             </div>
             <div className={styles.teamLegend}><span /> Connected to task history</div>
           </div>
-          <p className={styles.referenceNotice}>
-            The layout reference informed the room arrangement only. Character reference portraits were not found in <code>public/brand</code>, so the team uses original vector stand-ins.
-          </p>
+          {azharPosePlaceholder && (
+            <p className={styles.referenceNotice}>
+              Azhar is temporarily shown with an Ali pose until all five owner-provided Azhar poses are processed.
+            </p>
+          )}
           <div className={styles.officeFloorViewport} aria-label="Office floor. Scroll horizontally on small screens.">
-            <OfficeFloor
+            <OfficeSpriteScene
               tasks={tasks}
+              staff={OFFICE_STAFF}
               selectedStaffId={selectedStaffId}
               onSelectStaff={chooseStaff}
               onHoverStaff={setHoveredStaffId}
               connection={connection}
               floorMode={floorMode}
               floorCue={floorCue}
+              azharPlaceholder={azharPosePlaceholder}
+              fallback={
+                <LegacyOfficeFloor
+                  tasks={tasks}
+                  selectedStaffId={selectedStaffId}
+                  onSelectStaff={chooseStaff}
+                  onHoverStaff={setHoveredStaffId}
+                  connection={connection}
+                  floorMode={floorMode}
+                  floorCue={floorCue}
+                />
+              }
             />
           </div>
           <aside className={styles.staffDetail} aria-live="polite" aria-label={`${displayedStaff.name} details`}>

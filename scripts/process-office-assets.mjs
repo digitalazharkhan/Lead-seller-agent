@@ -8,6 +8,9 @@ import { fileURLToPath } from "node:url";
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OFFICE_DIR = path.join(REPO_ROOT, "public", "office");
 const OUTPUT_DIR = path.join(OFFICE_DIR, "processed");
+const PIXEL_OUTPUT_DIR = path.join(OFFICE_DIR, "processed-pixel");
+const PIXEL_ONLY = process.argv.includes("--pixel-only");
+const REPLACE_PIXEL_OUTPUTS = process.argv.includes("--replace-pixel");
 const CHARACTER_SOURCES = [
   { name: "azhar", file: "characters/azhar.png", background: "dark" },
   { name: "khan", file: "characters/khan.jpg", background: "white" },
@@ -407,6 +410,158 @@ async function writeContactSheet(name, poses) {
   await writeProcessedFile(destination, contactSheet);
 }
 
+function addPixelOutline(data, width, height, channels) {
+  const outlinedWidth = width + 2;
+  const outlinedHeight = height + 2;
+  const outlined = Buffer.alloc(outlinedWidth * outlinedHeight * channels);
+  const outlineColor = [28, 27, 35, 255];
+
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      const sourceOffset = (y * width + x) * channels;
+      if (data[sourceOffset + 3] < 24) continue;
+      for (let dy = -1; dy <= 1; dy += 1) {
+        for (let dx = -1; dx <= 1; dx += 1) {
+          if (dx === 0 && dy === 0) continue;
+          const targetOffset = ((y + 1 + dy) * outlinedWidth + x + 1 + dx) * channels;
+          if (outlined[targetOffset + 3] === 0) {
+            outlined.set(outlineColor, targetOffset);
+          }
+        }
+      }
+    }
+  }
+
+  for (let y = 0; y < height; y += 1) {
+    const sourceOffset = y * width * channels;
+    const targetOffset = ((y + 1) * outlinedWidth + 1) * channels;
+    data.copy(outlined, targetOffset, sourceOffset, sourceOffset + width * channels);
+  }
+  return { data: outlined, width: outlinedWidth, height: outlinedHeight };
+}
+
+async function writePixelPose(sourcePath, relativeOutputPath) {
+  const decoded = await sharp(sourcePath)
+    .ensureAlpha()
+    .resize({ height: 48, fit: "inside", withoutEnlargement: false, kernel: "nearest" })
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const outlined = addPixelOutline(
+    decoded.data,
+    decoded.info.width,
+    decoded.info.height,
+    decoded.info.channels,
+  );
+  const output = await sharp(outlined.data, {
+    raw: {
+      width: outlined.width,
+      height: outlined.height,
+      channels: decoded.info.channels,
+    },
+  })
+    .png({ palette: true, colours: 32, dither: 0 })
+    .toBuffer();
+  const destination = path.join(PIXEL_OUTPUT_DIR, relativeOutputPath);
+  const resolved = path.resolve(destination);
+  if (!resolved.startsWith(`${PIXEL_OUTPUT_DIR}${path.sep}`)) {
+    throw new Error(`Refusing to write outside ${PIXEL_OUTPUT_DIR}: ${relativeOutputPath}`);
+  }
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.writeFile(destination, output, { flag: REPLACE_PIXEL_OUTPUTS ? "w" : "wx" });
+  const metadata = await sharp(output).metadata();
+  return { width: metadata.width, height: metadata.height };
+}
+
+async function processPixelAssets() {
+  try {
+    await fs.access(OUTPUT_DIR);
+  } catch {
+    throw new Error(`${OUTPUT_DIR} is missing; run the original office asset processing first.`);
+  }
+  try {
+    await fs.access(PIXEL_OUTPUT_DIR);
+    if (!REPLACE_PIXEL_OUTPUTS) {
+      throw new Error(
+        `${PIXEL_OUTPUT_DIR} already exists. Use --replace-pixel to replace only generated pixel assets.`,
+      );
+    }
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  await fs.mkdir(PIXEL_OUTPUT_DIR, { recursive: true });
+
+  const manifest = {
+    generatedAt: new Date().toISOString(),
+    processing: {
+      targetHeight: 48,
+      displayHeight: 96,
+      resizeKernel: "nearest",
+      paletteColors: 32,
+      outline: "one-pixel 8-connected dark outline",
+      sourceAssetsPreserved: true,
+    },
+    characters: {},
+  };
+
+  for (const character of CHARACTER_SOURCES) {
+    const sourceDirectory = path.join(OUTPUT_DIR, character.name);
+    const files = (await fs.readdir(sourceDirectory))
+      .filter((file) => file.endsWith(".png"))
+      .sort((left, right) => left.localeCompare(right, undefined, { numeric: true }));
+    const poses = [];
+    for (const file of files) {
+      const source = path.join(sourceDirectory, file);
+      const output = `${character.name}/${file}`;
+      const size = await writePixelPose(source, output);
+      poses.push({ file: output, source: path.relative(OFFICE_DIR, source), ...size });
+    }
+    manifest.characters[character.name] = { poses };
+  }
+
+  const azharFallbacks = {
+    sit: "ali/ali-20.png",
+    stand: "ali/ali-02.png",
+    angry: "ali/ali-02.png",
+    success: "ali/ali-02.png",
+    walk: "ali/ali-08.png",
+    talk: "ali/ali-21.png",
+  };
+  const azharPoses = {};
+  for (const pose of ["sit", "stand", "angry", "success", "walk", "talk"]) {
+    const ownerSource = pose === "talk"
+      ? path.join(OFFICE_DIR, "characters", "azhar-stand.png")
+      : path.join(OFFICE_DIR, "characters", `azhar-${pose}.png`);
+    let sourcePath = ownerSource;
+    let placeholder = false;
+    try {
+      await fs.access(ownerSource);
+    } catch {
+      sourcePath = path.join(OUTPUT_DIR, azharFallbacks[pose]);
+      placeholder = true;
+    }
+    const output = `azhar/azhar-${pose}.png`;
+    const size = await writePixelPose(sourcePath, output);
+    azharPoses[pose] = {
+      file: output,
+      source: path.relative(OFFICE_DIR, sourcePath),
+      placeholder,
+      ...size,
+    };
+  }
+  manifest.characters.azhar.dedicatedPoses = azharPoses;
+  const manifestPath = path.join(PIXEL_OUTPUT_DIR, "manifest.json");
+  await fs.writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, {
+    flag: REPLACE_PIXEL_OUTPUTS ? "w" : "wx",
+  });
+  console.log(`Created pixelated character poses in ${path.relative(REPO_ROOT, PIXEL_OUTPUT_DIR)}.`);
+  for (const [name, character] of Object.entries(manifest.characters)) {
+    console.log(`  ${name}: ${character.poses.length} poses`);
+  }
+  const realAzharPoses = Object.values(azharPoses).filter((pose) => !pose.placeholder).length;
+  console.log(`  Azhar dedicated source poses: ${realAzharPoses}/6; missing poses use marked Ali placeholders.`);
+  console.log("  manifest.json");
+}
+
 function cleanOfficeBackground(data, width, height, channels) {
   const mask = floodMaskFromBorder(width, height, (index) => {
     const offset = index * channels;
@@ -546,7 +701,8 @@ async function main() {
   console.log("  manifest.json");
 }
 
-main().catch((error) => {
+const run = PIXEL_ONLY ? processPixelAssets : main;
+run().catch((error) => {
   console.error(`Asset processing failed: ${error.stack ?? error.message}`);
   process.exitCode = 1;
 });

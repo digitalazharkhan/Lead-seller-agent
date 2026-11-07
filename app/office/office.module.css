@@ -582,6 +582,257 @@
   height: auto;
 }
 
+.officeSpriteScene {
+  position: relative;
+  width: 100%;
+  min-width: 860px;
+  aspect-ratio: 1549 / 894;
+  overflow: hidden;
+  background: #d7dddf;
+  container-type: inline-size;
+  isolation: isolate;
+}
+
+.officeSpriteBackground {
+  z-index: 0;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.officeSpriteCharacter {
+  position: absolute;
+  width: 14%;
+  height: 13%;
+  transform: translate(-50%, -50%);
+}
+
+.officeSpriteWalking {
+  transition: left 1.15s cubic-bezier(.2, .75, .25, 1), top 1.15s cubic-bezier(.2, .75, .25, 1);
+}
+
+.officeSpriteHotspot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.officeSpriteHotspot:focus-visible {
+  outline: 3px solid #f5bb55;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+.officeSpriteArt {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+  display: block;
+  height: clamp(54px, 10.5cqw, 96px);
+}
+
+.officeSpriteCharacterImage {
+  object-fit: contain;
+  image-rendering: pixelated;
+  overflow: visible;
+}
+
+.officeSpriteName,
+.officeSpriteIndicator {
+  position: absolute;
+  bottom: -3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+  padding: 2px 7px;
+  border: 1px solid rgb(29 51 46 / 25%);
+  border-radius: 999px;
+  background: #fffdf5;
+  box-shadow: 0 2px 6px rgb(23 39 34 / 20%);
+  color: #233a32;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.officeSpriteName {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.officeSpriteIndicator {
+  left: 50%;
+  right: auto;
+  bottom: 20px;
+  min-height: 18px;
+  max-width: 190px;
+  border-color: #bac8b8;
+  background: #eef6e9;
+  color: #315d3d;
+  font-size: 8px;
+  letter-spacing: .3px;
+  text-align: center;
+  transform: translateX(-50%);
+  white-space: normal;
+}
+
+.officeSpriteIndicatorWorking {
+  border-color: #b6d8c8;
+  background: #e7f5eb;
+  color: #17653e;
+}
+
+.officeSpriteIndicatorAlert {
+  border-color: #e5b3aa;
+  background: #fff0ed;
+  color: #963d36;
+}
+
+.officeSpriteTitle,
+.officeSpriteStatus {
+  position: absolute;
+  left: 50%;
+  z-index: 3;
+  width: max-content;
+  max-width: 220px;
+  padding: 4px 7px;
+  border: 1px solid rgb(29 51 46 / 28%);
+  border-radius: 6px;
+  background: #fffdf5;
+  box-shadow: 0 3px 10px rgb(23 39 34 / 22%);
+  color: #344840;
+  font-size: 9px;
+  font-weight: 650;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  transform: translateX(-50%);
+  visibility: hidden;
+  white-space: normal;
+}
+
+.officeSpriteTitle {
+  top: calc(100% + 1px);
+}
+
+.officeSpriteStatus {
+  top: calc(100% + 22px);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.officeSpriteStatus i {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.officeSpriteHotspot:hover .officeSpriteTitle,
+.officeSpriteHotspot:hover .officeSpriteStatus,
+.officeSpriteHotspot:focus-visible .officeSpriteTitle,
+.officeSpriteHotspot:focus-visible .officeSpriteStatus,
+.officeSpriteHotspot[aria-pressed="true"] .officeSpriteTitle,
+.officeSpriteHotspot[aria-pressed="true"] .officeSpriteStatus {
+  opacity: 1;
+  visibility: visible;
+}
+
+.officeSpritePlaceholder {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  padding: 2px 5px;
+  border: 1px dashed #7b6540;
+  border-radius: 4px;
+  background: #fff7dd;
+  color: #634c20;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: .4px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.officeSpriteDryRun {
+  position: absolute;
+  right: 50%;
+  bottom: -17px;
+  width: max-content;
+  color: #7a5111;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: .6px;
+  transform: translateX(50%);
+}
+
+.officeSpriteCallout,
+.officeSpriteBanter {
+  position: absolute;
+  z-index: 20;
+  max-width: 210px;
+  padding: 8px 11px;
+  border: 1px solid #af8771;
+  border-radius: 10px;
+  background: #fff7e8;
+  box-shadow: 0 5px 16px rgb(32 40 33 / 22%);
+  color: #43362b;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.officeSpriteCallout {
+  top: -9%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.officeSpriteBanter {
+  top: 44%;
+  left: 50%;
+  border-color: #7d9d80;
+  background: #f0f8e9;
+  color: #3a533b;
+  transform: translate(-50%, -50%);
+}
+
+.officeSpriteWalking .officeSpriteCharacterImage {
+  animation: spriteWalkBob 180ms ease-in-out 6;
+}
+
+.officeSpriteFallback {
+  padding: 12px;
+  border: 1px solid #c78677;
+  border-radius: 10px;
+  background: #fff0ed;
+  color: #613b35;
+}
+
+.officeSpriteFallback > p {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@keyframes spriteWalkBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
 .floorZoneLabel {
   fill: #455e53;
   font-size: 12px;
@@ -1977,8 +2228,22 @@
     max-width: none;
   }
 
+  .officeSpriteScene {
+    min-width: 860px;
+  }
+
   .staffDetail {
     padding: 12px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .officeSpriteWalking {
+      transition: none;
+    }
+
+    .officeSpriteWalking .officeSpriteCharacterImage {
+      animation: none;
+    }
   }
 
   .staffDetailHeading {
